@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const stats = [
-  { number: '6+', label: 'Years Running' },
-  { number: '200+', label: 'People Trained' },
-  { number: '3', label: 'Live Products' },
+  { number: '4,500+', label: 'People Trained' },
+  { number: '20+', label: 'Startups Incubated' },
+  { number: '200+', label: 'Programs Delivered' },
+  { number: '—', label: 'Researches Conducted' },
 ]
 </script>
 
@@ -44,7 +45,7 @@ const stats = [
 
         <!-- Sub copy -->
         <p class="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 animate-fade-in-up animate-fade-in-up-3" style="line-height: 1.7;">
-          We train developers, host internships, build real products for the Iraqi market, and give makers a space to work. Six years in — still going.
+          We train people, run internship programs, conduct market research, and build tech solutions — all under one roof in Baghdad.
         </p>
 
         <!-- CTA -->
@@ -53,18 +54,18 @@ const stats = [
             href="#pillars"
             class="px-10 py-3 bg-gradient-to-r from-orange-400 to-orange-700 text-white rounded-full text-lg font-semibold hover:from-orange-700 hover:to-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
           >
-            See What We Do
+            Explore Programs
           </a>
           <a
             href="#contact"
             class="px-10 py-3 bg-transparent border border-zinc-600 text-zinc-300 rounded-full text-lg font-semibold hover:border-zinc-400 hover:text-white transition-all duration-200"
           >
-            Get in Touch
+            Visit The Space
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="flex gap-12 animate-fade-in-up animate-fade-in-up-5">
+        <div class="grid grid-cols-2 md:flex gap-8 md:gap-12 animate-fade-in-up animate-fade-in-up-5">
           <div v-for="stat in stats" :key="stat.label">
             <p class="text-3xl md:text-4xl font-extrabold text-orange-400">{{ stat.number }}</p>
             <p class="text-zinc-500 text-[17px] font-medium mt-1">{{ stat.label }}</p>

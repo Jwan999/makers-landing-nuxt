@@ -3,9 +3,10 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const links = [
-  { label: 'What We Do', href: '#pillars' },
-  { label: 'Tawtheef', href: '#tawtheef' },
-  { label: 'The Space', href: '#space' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'Impact', href: '#impact' },
   { label: 'Contact', href: '#contact' },
 ]
 

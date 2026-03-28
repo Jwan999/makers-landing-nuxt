@@ -2,9 +2,12 @@
   <div>
     <NavBar />
     <HeroSection />
+    <AboutTeaser />
     <PillarsSection />
-    <TawtheefSection />
-    <SpaceSection />
+    <SolutionsSection />
+    <ImpactSection />
+    <PartnersSection />
+    <FaqSection />
     <ContactSection />
     <FooterSection />
   </div>

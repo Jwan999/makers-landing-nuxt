@@ -11,9 +11,11 @@
         </div>
 
         <!-- Links -->
-        <div class="flex items-center gap-8">
-          <a href="https://tawtheef.makersiq.org" target="_blank" rel="noopener" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">Tawtheef</a>
-          <a href="https://makersiq.org" target="_blank" rel="noopener" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">MakersIQ</a>
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+          <NuxtLink to="/about" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">About Us</NuxtLink>
+          <NuxtLink to="/programs" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">Programs</NuxtLink>
+          <a href="#solutions" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">Solutions</a>
+          <a href="#impact" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">Impact</a>
           <a href="#contact" class="text-zinc-500 hover:text-orange-400 transition-colors text-sm">Contact</a>
         </div>
 
