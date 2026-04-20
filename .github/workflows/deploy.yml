@@ -1,0 +1,48 @@
+name: Deploy Landing
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run generate
+
+  deploy:
+    name: Deploy to Production
+    needs: ci
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/temp-makersiq
+
+            # Safety: tag current state for rollback
+            git tag "pre-deploy-$(date +%Y%m%d-%H%M%S)" || true
+
+            # Force-sync with remote (prevents local changes from blocking deploy)
+            git fetch origin main
+            git reset --hard origin/main
+
+            npm ci
+            npm run generate
+
+            echo "Deploy successful"
