@@ -4,12 +4,12 @@
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-orange-400 font-semibold text-lg mb-3">Who We Are</p>
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-          Baghdad's Innovation Hub Since 2017
+          Baghdad's Data-Driven Hub Since 2017
         </h2>
         <p class="text-zinc-400 text-lg leading-relaxed mb-4">
-          Makers is a digital and technological innovation center creating job opportunities in IT,
-          developing workforce capabilities, and encouraging Iraqi youth to build startups.
-          Supported by GIZ and USAID.
+          Makers of Baghdad is a data-driven hub empowering entrepreneurs and SME owners across Iraq
+          through capacity building, applied research, and entrepreneurial ecosystem development.
+          Supported by GIZ, USAID, ILO, and international partners.
         </p>
         <NuxtLink
           to="/about"

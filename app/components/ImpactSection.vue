@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const stats = [
-  { number: '4,500+', label: 'People Trained' },
+  { number: '50,000+', label: 'Visitors' },
+  { number: '15,000+', label: 'Beneficiaries' },
+  { number: '200+', label: 'Training Sessions' },
+  { number: '140+', label: 'Products Built' },
+  { number: '200+', label: 'SMEs Supported' },
+  { number: '2,000+', label: 'Jobs Created' },
   { number: '49%', label: 'Female Participants' },
-  { number: '200+', label: 'Programs Delivered' },
-  { number: '20+', label: 'Startups Incubated' },
-  { number: '—', label: 'Visitors' },
-  { number: '221', label: 'Career Placements' },
-  { number: '32', label: 'Alumni Startups' },
   { number: '6+', label: 'Years Running' },
 ]
 </script>
@@ -18,7 +18,7 @@ const stats = [
         <p class="text-orange-400 font-semibold text-lg mb-3">Our Impact</p>
         <h2 class="text-3xl md:text-5xl font-bold text-white">By The Numbers</h2>
         <p class="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">
-          Real results from years of training, building, and growing Iraq's tech ecosystem.
+          Real results from years of empowering businesses, creating jobs, and building Iraq's ecosystem.
         </p>
       </div>
 

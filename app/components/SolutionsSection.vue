@@ -2,7 +2,7 @@
 const solutions = [
   {
     title: 'Tawtheef',
-    desc: 'Employment platform connecting Iraqi job seekers with public and private sector opportunities. Smart job matching with skills-based profiles.',
+    desc: 'Advanced digital employment platform with ATS-compliant CV builder, intelligent matching tools, and a searchable talent database for Iraq\'s tech sector.',
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
   },
   {
@@ -22,7 +22,7 @@ const solutions = [
   },
   {
     title: 'Loan Eligibility Checker',
-    desc: 'Helps businesses check their eligibility for loans from Iraqi government programs.',
+    desc: 'Helps businesses check their eligibility for loans from Iraqi government initiatives.',
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
   },
   {
@@ -37,10 +37,10 @@ const solutions = [
   <section id="solutions" class="py-24 bg-zinc-100">
     <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl">
       <div class="text-center mb-16">
-        <p class="text-orange-700 font-semibold text-lg mb-3">Our Solutions</p>
+        <p class="text-orange-700 font-semibold text-lg mb-3">Makers Suite</p>
         <h2 class="text-3xl md:text-5xl font-bold text-zinc-800">Built by Makers</h2>
         <p class="text-zinc-500 text-lg mt-4 max-w-2xl mx-auto">
-          Tech products we've designed and built — from employment platforms to automated reporting. If you need something custom, let's talk.
+          Our suite of tech products — from employment platforms to automated reporting. If you need something custom, let's talk.
         </p>
       </div>
 

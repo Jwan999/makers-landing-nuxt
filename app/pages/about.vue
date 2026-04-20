@@ -8,7 +8,7 @@
         </div>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Coming Soon</h1>
         <p class="text-zinc-400 text-lg max-w-md mx-auto mb-8">
-          We're building out the About Us page. Check back soon for the full story.
+          We're building out the Who We Are page. Check back soon for the full story.
         </p>
         <NuxtLink
           to="/"
@@ -19,44 +19,5 @@
       </div>
     </section>
     <FooterSection />
-
-    <!--
-    ╔══════════════════════════════════════════════════════════════╗
-    ║  TODO: ABOUT US PAGE — DATA TO FILL IN                      ║
-    ╠══════════════════════════════════════════════════════════════╣
-    ║                                                              ║
-    ║  ABOUT US SECTION:                                           ║
-    ║  - Full origin story (founded 2017 as IoT Maker, rebranded) ║
-    ║  - Detailed mission statement                                ║
-    ║  - Backing: GIZ and USAID details                           ║
-    ║  - Team photo                                                ║
-    ║  - Team members / leadership info                            ║
-    ║                                                              ║
-    ║  THE SPACE — CO-WORKING:                                     ║
-    ║  - Description of co-working area                            ║
-    ║  - Amenities: WiFi, workstations, coffee/tea                 ║
-    ║  - Photos of co-working space                                ║
-    ║  - "Apply to Co-Work" CTA / form                            ║
-    ║  - Pricing info                                              ║
-    ║                                                              ║
-    ║  THE SPACE — TRAINING HALLS:                                 ║
-    ║  - Description of training hall facilities                   ║
-    ║  - Capacity, equipment, setup                                ║
-    ║  - Photos of training halls                                  ║
-    ║  - "Register for Training Hall" CTA / form                  ║
-    ║                                                              ║
-    ║  THE SPACE — OPEN SPACE:                                     ║
-    ║  - Description of open/community area                        ║
-    ║  - Use cases: events, meetups, casual work                   ║
-    ║  - Photos                                                    ║
-    ║                                                              ║
-    ║  LOCATION DETAILS:                                           ║
-    ║  - Full address: Al Sina'a Street, Baghdad, Al Rusafa        ║
-    ║  - Google Maps embed                                         ║
-    ║  - Directions / how to get there                             ║
-    ║  - Operating hours                                           ║
-    ║                                                              ║
-    ╚══════════════════════════════════════════════════════════════╝
-    -->
   </div>
 </template>

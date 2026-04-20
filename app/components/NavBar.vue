@@ -3,11 +3,9 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const links = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Impact', href: '#impact' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Who We Are', href: '/about' },
+  { label: 'Previous Work', href: '/previous-work' },
+  { label: 'Data Hub', href: '/data-hub' },
 ]
 
 onMounted(() => {
@@ -26,7 +24,7 @@ onMounted(() => {
   >
     <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
+      <a href="/" class="flex items-center gap-3 group">
         <div class="w-10 h-10 bg-orange-700 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-orange-500/25">
           <img src="~/assets/svgs/tawtheefLogo.svg" alt="Makers" class="w-6 h-6 brightness-0 invert" />
         </div>
@@ -35,16 +33,16 @@ onMounted(() => {
 
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-8">
-        <a
+        <NuxtLink
           v-for="link in links"
           :key="link.href"
-          :href="link.href"
+          :to="link.href"
           class="text-zinc-300 hover:text-white transition-colors duration-200 text-[17px] font-medium"
         >
           {{ link.label }}
-        </a>
+        </NuxtLink>
         <a
-          href="#contact"
+          href="/#contact"
           class="px-6 py-2 bg-orange-700 text-white rounded-full text-[17px] font-semibold hover:bg-orange-600 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
         >
           Get Involved
@@ -69,17 +67,17 @@ onMounted(() => {
     <!-- Mobile Menu -->
     <Transition name="slide">
       <div v-if="mobileOpen" class="md:hidden bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 px-6 py-4">
-        <a
+        <NuxtLink
           v-for="link in links"
           :key="link.href"
-          :href="link.href"
+          :to="link.href"
           class="block py-3 text-zinc-300 hover:text-white transition-colors text-[17px] font-medium"
           @click="mobileOpen = false"
         >
           {{ link.label }}
-        </a>
+        </NuxtLink>
         <a
-          href="#contact"
+          href="/#contact"
           class="block mt-3 px-6 py-3 bg-orange-700 text-white rounded-full text-center text-[17px] font-semibold"
           @click="mobileOpen = false"
         >

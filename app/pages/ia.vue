@@ -4,15 +4,26 @@
       <header class="mb-12 border-b border-gray-800 pb-8">
         <p class="text-sm text-amber-500 uppercase tracking-widest mb-2">Internal Reference Only</p>
         <h1 class="text-4xl font-bold text-white mb-3">Makers Landing Page</h1>
-        <p class="text-lg text-gray-400">Information Architecture — Revised</p>
+        <p class="text-lg text-gray-400">Information Architecture — Revised v2</p>
         <p class="text-sm text-gray-600 mt-2">This page is not linked anywhere on the site. It's a blueprint for what each section should contain.</p>
 
         <div class="mt-6 bg-gray-900 border border-gray-800 rounded-lg p-4">
-          <p class="text-sm text-amber-500 uppercase tracking-wide mb-2">Site Structure — 3 Pages</p>
+          <p class="text-sm text-amber-500 uppercase tracking-wide mb-2">Site Structure — 4 Pages</p>
           <ul class="space-y-1 text-gray-300 text-sm">
-            <li><span class="text-white font-semibold">/ (Landing Page)</span> — Main page with hero, pillars, solutions, impact, partners, FAQs, contact &amp; location, footer</li>
-            <li><span class="text-white font-semibold">/about</span> — About Us + The Space (co-work, training halls, open space) — <span class="text-amber-400">Coming Soon</span></li>
-            <li><span class="text-white font-semibold">/programs</span> — All programs listing — <span class="text-amber-400">Coming Soon</span></li>
+            <li><span class="text-white font-semibold">/ (Landing Page)</span> — Hero, about teaser, 3 pillars, Makers Suite, services, impact, partners, FAQs, contact form, footer</li>
+            <li><span class="text-white font-semibold">/about</span> — Who We Are + The Space (co-work, training halls, open space) — <span class="text-amber-400">Coming Soon</span></li>
+            <li><span class="text-white font-semibold">/previous-work</span> — Portfolio of all previous projects, team, and Tawtheef platform</li>
+            <li><span class="text-white font-semibold">/data-hub</span> — Data Hub — <span class="text-amber-400">Coming Soon</span></li>
+          </ul>
+        </div>
+
+        <div class="mt-4 bg-red-900/30 border border-red-800 rounded-lg p-4">
+          <p class="text-sm text-red-400 uppercase tracking-wide mb-2">Key Naming Rules</p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li>— NEVER use "startups" — always say <span class="text-white font-semibold">"Businesses and SMEs"</span></li>
+            <li>— NEVER use "programs" — the programs page is removed</li>
+            <li>— Technologies section is called <span class="text-white font-semibold">"Makers Suite"</span></li>
+            <li>— Navbar only has page links (Who We Are, Previous Work, Data Hub) — sections are NOT in navbar</li>
           </ul>
         </div>
       </header>
@@ -34,10 +45,10 @@
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <ul class="space-y-2 text-gray-300">
             <li><span class="text-amber-500">Logo:</span> Makers</li>
-            <li><span class="text-amber-500">Links:</span> About Us | Programs | Solutions | Impact | Contact</li>
+            <li><span class="text-amber-500">Page Links:</span> Who We Are | Previous Work | Data Hub</li>
             <li><span class="text-amber-500">CTA Button:</span> "Get Involved"</li>
           </ul>
-          <p class="text-sm text-gray-500 mt-4 italic">Sticky nav, minimal. Logo left, links center, CTA right. "About Us" and "Programs" link to their respective pages (coming soon).</p>
+          <p class="text-sm text-gray-500 mt-4 italic">Sticky nav, minimal. Logo left, links center, CTA right. Sections (pillars, suite, impact, services, contact) are NOT in the navbar — they are scroll sections on the landing page only.</p>
         </div>
       </section>
 
@@ -51,41 +62,40 @@
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">Tagline</p>
-            <p class="text-gray-300">"Baghdad's Innovation Hub"</p>
+            <p class="text-gray-300">"Baghdad's Data-Driven Hub"</p>
           </div>
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">Headline</p>
-            <p class="text-gray-300">Bold, mission-driven statement about building Iraq's tech future</p>
+            <p class="text-gray-300">Empowering entrepreneurs and SME owners across Iraq through capacity building, applied research, and ecosystem development.</p>
           </div>
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">Sub-copy</p>
-            <p class="text-gray-300">1-2 sentences: "We train people, run internship programs, conduct market research, and build tech solutions — all under one roof in Baghdad."</p>
+            <p class="text-gray-300">We boost youth employability and create job opportunities by connecting talent with the private sector, government, and international partners.</p>
           </div>
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">CTA Buttons</p>
-            <p class="text-gray-300">"Explore Programs" (primary) + "Visit The Space" (secondary)</p>
+            <p class="text-gray-300">"Explore What We Do" (primary) + "Get In Touch" (secondary)</p>
           </div>
           <div class="mt-6 pt-4 border-t border-gray-800">
-            <p class="text-sm text-amber-500 uppercase tracking-wide mb-3">Impact Numbers (Prominent Display)</p>
+            <p class="text-sm text-amber-500 uppercase tracking-wide mb-3">Impact Numbers (Prominent — Visitors First)</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="bg-gray-800 rounded p-3 text-center">
-                <p class="text-2xl font-bold text-white">4,500+</p>
-                <p class="text-xs text-gray-400">People Trained</p>
+                <p class="text-2xl font-bold text-white">50,000+</p>
+                <p class="text-xs text-gray-400">Visitors</p>
               </div>
               <div class="bg-gray-800 rounded p-3 text-center">
-                <p class="text-2xl font-bold text-white">20+</p>
-                <p class="text-xs text-gray-400">Startups Incubated</p>
+                <p class="text-2xl font-bold text-white">15,000+</p>
+                <p class="text-xs text-gray-400">Beneficiaries</p>
+              </div>
+              <div class="bg-gray-800 rounded p-3 text-center">
+                <p class="text-2xl font-bold text-white">2,000+</p>
+                <p class="text-xs text-gray-400">Jobs Created</p>
               </div>
               <div class="bg-gray-800 rounded p-3 text-center">
                 <p class="text-2xl font-bold text-white">200+</p>
-                <p class="text-xs text-gray-400">Programs Delivered</p>
-              </div>
-              <div class="bg-gray-800 rounded p-3 text-center">
-                <p class="text-2xl font-bold text-white">X</p>
-                <p class="text-xs text-gray-400">Researches Conducted</p>
+                <p class="text-xs text-gray-400">SMEs Supported</p>
               </div>
             </div>
-            <p class="text-xs text-gray-600 mt-3 italic">Source: GIZ & FabLabs. Confirm with boss for latest figures. "Researches Conducted" number TBD.</p>
           </div>
         </div>
       </section>
@@ -99,62 +109,53 @@
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <ul class="space-y-3 text-gray-300">
-            <li><span class="text-amber-500">Brief Intro:</span> Short mission statement and what Makers does — keep it concise, the full story lives on the About Us page.</li>
+            <li><span class="text-amber-500">Brief Intro:</span> Short mission statement — data-driven hub empowering entrepreneurs and SME owners across Iraq. No mention of startups.</li>
             <li><span class="text-amber-500">CTA:</span> "Learn More About Us" linking to /about (coming soon).</li>
           </ul>
-          <p class="text-sm text-gray-500 mt-4 italic">This is a teaser, not the full about section. Team photo and detailed origin story, mission, backing info all live on the dedicated About Us page.</p>
         </div>
       </section>
 
-      <!-- Section 4: What We Do — The 5 Pillars -->
+      <!-- Section 4: What We Do — The 3 Pillars -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">04</span>
-          <h2 class="text-2xl font-bold text-white">What We Do — The 5 Pillars</h2>
+          <h2 class="text-2xl font-bold text-white">What We Do — The 3 Pillars</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Each pillar gets a card with icon, title, and short description.</p>
+          <p class="text-sm text-gray-500 mb-4">Each pillar gets a card with icon, title, and description based on Makers of Baghdad's core components.</p>
           <div class="space-y-4">
             <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">1. Training Bootcamps</h3>
-              <p class="text-gray-400 text-sm">Intensive programs in web development, mobile development, UI/UX design. Hands-on, project-based learning. Topics also include 3D modeling, electronics, robotics, and AI.</p>
+              <h3 class="text-white font-semibold mb-1">1. Employment</h3>
+              <p class="text-gray-400 text-sm">Creating sustainable and inclusive job opportunities for youth, with a strong focus on skills development and the digital economy. We boost youth employability by connecting young talent with the private sector, government, and international partners through targeted initiatives and national events.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">2. Internships</h3>
-              <p class="text-gray-400 text-sm">Real projects, real deadlines. Interns work alongside the dev team on shipping products. Bridge from training to career.</p>
+              <h3 class="text-white font-semibold mb-1">2. Businesses & SMEs</h3>
+              <p class="text-gray-400 text-sm">Strengthening Iraq's entrepreneurial ecosystem by supporting innovation, fostering local production, and enabling sustainable business growth. We provide mentorship, acceleration, and technical support in business development, financial systems, and legal frameworks.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">3. Co-Working Space</h3>
-              <p class="text-gray-400 text-sm">Desks, wifi, coffee, community. A place for freelancers, startups, and remote workers in Baghdad.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">4. End-to-End Product Growth</h3>
-              <p class="text-gray-400 text-sm">We partner with you from idea to launch and beyond — whether it's shaping your concept, building the product, or scaling it to market. Full-cycle support to turn your vision into a working solution.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">5. Research</h3>
-              <p class="text-gray-400 text-sm">Analyzing sectors and providing actionable insights and solutions — mapping the Iraqi market to help businesses and organizations make informed decisions.</p>
+              <h3 class="text-white font-semibold mb-1">3. Research</h3>
+              <p class="text-gray-400 text-sm">Producing data-driven studies and sector-mapping reports that guide policymakers and program designers in creating effective solutions for beneficiaries. Our research informs policy and practice across Iraq's economic landscape.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 5: Solutions / Tech Portfolio -->
+      <!-- Section 5: Makers Suite -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">05</span>
-          <h2 class="text-2xl font-bold text-white">Our Solutions — Tech Portfolio</h2>
+          <h2 class="text-2xl font-bold text-white">Makers Suite — Tech Portfolio</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Showcase of tech products built by Makers. This doubles as a portfolio — if businesses want a custom solution, they can reach out.</p>
+          <p class="text-sm text-gray-500 mb-4">Showcase of tech products built by Makers. Formerly called "Solutions" — now branded as "Makers Suite".</p>
           <div class="space-y-4">
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Tawtheef</h3>
-              <p class="text-gray-400 text-sm">Employment platform connecting Iraqi job seekers with public and private sector opportunities. Smart job matching, skills-based profiles.</p>
+              <p class="text-gray-400 text-sm">Advanced digital employment platform with ATS-compliant CV builder and intelligent matching tools.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Contract Generator</h3>
-              <p class="text-gray-400 text-sm">A contractor website that generates contracts, creates templates, and streamlines the contracting process for businesses.</p>
+              <p class="text-gray-400 text-sm">Generates contracts and templates, streamlining the contracting process for businesses.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Presentation Maker</h3>
@@ -166,7 +167,7 @@
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Loan Eligibility Checker</h3>
-              <p class="text-gray-400 text-sm">Tool for businesses to check eligibility for loans from Iraqi government programs.</p>
+              <p class="text-gray-400 text-sm">Helps businesses check eligibility for loans from Iraqi government initiatives.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Reports System</h3>
@@ -176,163 +177,171 @@
           <div class="mt-4 pt-4 border-t border-gray-800">
             <p class="text-sm text-gray-400"><span class="text-amber-500">CTA:</span> "Need a custom solution? Let's build it together." — links to contact section.</p>
           </div>
-          <div class="mt-4 pt-4 border-t border-gray-800">
-            <p class="text-sm text-gray-400"><span class="text-amber-500">Articles:</span> Each solution can link to related articles from makers-articles.vercel.app (case studies, write-ups, behind-the-scenes). Articles live within the solutions context, not as a standalone section.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: Services -->
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">06</span>
+          <h2 class="text-2xl font-bold text-white">Our Services</h2>
+          <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">New Section</span>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <p class="text-sm text-gray-500 mb-4">Services offered by Makers based on expertise and facilities.</p>
+          <div class="space-y-4">
+            <div class="bg-gray-800 rounded p-4">
+              <h3 class="text-white font-semibold mb-1">Training Halls</h3>
+              <p class="text-gray-400 text-sm">Fully equipped training facilities for intensive bootcamps, workshops, and capacity building sessions in web development, design, robotics, AI, and more.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <h3 class="text-white font-semibold mb-1">Curriculum Development</h3>
+              <p class="text-gray-400 text-sm">Custom curriculum design for IT, entrepreneurship, and digital skills training. Developed for organizations including WFP, US Embassy, and ministry-level clients.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <h3 class="text-white font-semibold mb-1">Co-Working Spaces</h3>
+              <p class="text-gray-400 text-sm">Collaborative workspaces for businesses, SMEs, and remote workers in Baghdad. High-speed WiFi, workstations, and a community-driven environment.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <h3 class="text-white font-semibold mb-1">Financial Understanding</h3>
+              <p class="text-gray-400 text-sm">Financial education and business development support — including SYIB training, financial management, and connection to loan facilities.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <h3 class="text-white font-semibold mb-1">Investment Readiness</h3>
+              <p class="text-gray-400 text-sm">Preparing businesses and SMEs to be investment-ready through due diligence support, data room establishment, mentorship, and positioning for funding opportunities.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 6: Impact / By The Numbers -->
+      <!-- Section 7: Impact / By The Numbers -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">06</span>
+          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">07</span>
           <h2 class="text-2xl font-bold text-white">Impact / By The Numbers</h2>
           <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Boss Priority</span>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Dedicated section with large, animated counters. Visual, scroll-triggered animations.</p>
+          <p class="text-sm text-gray-500 mb-4">Dedicated section with large, animated counters. All statistics from Makers document.</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">4,500+</p>
-              <p class="text-xs text-gray-400 mt-1">People Trained</p>
+              <p class="text-3xl font-bold text-amber-500">50,000+</p>
+              <p class="text-xs text-gray-400 mt-1">Visitors</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4 text-center">
+              <p class="text-3xl font-bold text-amber-500">15,000+</p>
+              <p class="text-xs text-gray-400 mt-1">Beneficiaries</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4 text-center">
+              <p class="text-3xl font-bold text-amber-500">200+</p>
+              <p class="text-xs text-gray-400 mt-1">Training Sessions</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4 text-center">
+              <p class="text-3xl font-bold text-amber-500">140+</p>
+              <p class="text-xs text-gray-400 mt-1">Products Built</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4 text-center">
+              <p class="text-3xl font-bold text-amber-500">200+</p>
+              <p class="text-xs text-gray-400 mt-1">SMEs Supported</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4 text-center">
+              <p class="text-3xl font-bold text-amber-500">2,000+</p>
+              <p class="text-xs text-gray-400 mt-1">Jobs Created</p>
             </div>
             <div class="bg-gray-800 rounded p-4 text-center">
               <p class="text-3xl font-bold text-amber-500">49%</p>
               <p class="text-xs text-gray-400 mt-1">Female Participants</p>
             </div>
             <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">200+</p>
-              <p class="text-xs text-gray-400 mt-1">Programs Delivered</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">20+</p>
-              <p class="text-xs text-gray-400 mt-1">Startups Incubated</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">X</p>
-              <p class="text-xs text-gray-400 mt-1">Visitors</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">221</p>
-              <p class="text-xs text-gray-400 mt-1">Career Placements</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4 text-center">
-              <p class="text-3xl font-bold text-amber-500">32</p>
-              <p class="text-xs text-gray-400 mt-1">Alumni Startups</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4 text-center">
               <p class="text-3xl font-bold text-amber-500">6+</p>
               <p class="text-xs text-gray-400 mt-1">Years Running</p>
             </div>
           </div>
-          <p class="text-xs text-gray-600 mt-4 italic">Career placements and alumni startups are from the 2019-2023 period (GIZ data). Visitors number TBD. Verify all numbers with latest data before launch.</p>
+          <p class="text-xs text-gray-600 mt-4 italic">All numbers are placeholder/fake for now. Verify with latest data before launch.</p>
         </div>
       </section>
 
-      <!-- Section 7: Partners & Supporters -->
-      <section class="mb-10">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">07</span>
-          <h2 class="text-2xl font-bold text-white">Partners & Supporters</h2>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <div class="space-y-4">
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">GIZ</h3>
-              <p class="text-gray-400 text-sm">Deutsche Gesellschaft fur Internationale Zusammenarbeit. Supported Makers with equipment and financial resources on behalf of the German Federal Ministry for Economic Cooperation and Development (BMZ).</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">USAID</h3>
-              <p class="text-gray-400 text-sm">Funds the Masarat job acceleration program.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">FabLabs Network</h3>
-              <p class="text-gray-400 text-sm">Part of the global FabLabs network (fablabs.io).</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-500 mt-4 italic">Display as logo row. Add any other partners/sponsors as needed.</p>
-        </div>
-      </section>
-
-      <!-- Section 8: FAQs -->
+      <!-- Section 8: Partners & Supporters -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">08</span>
-          <h2 class="text-2xl font-bold text-white">FAQs</h2>
+          <h2 class="text-2xl font-bold text-white">Partners & Supporters</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Accordion-style FAQ section. Suggested questions:</p>
-          <div class="space-y-3">
+          <p class="text-sm text-gray-500 mb-4">Logo row of all partners from previous projects.</p>
+          <div class="space-y-4">
             <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">How can I join a training program?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about registration process, linking to /programs page.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">What is the co-working space and how do I book?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about co-work amenities and booking, linking to /about page.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">Can Makers build a custom tech solution for my business?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about the solutions portfolio and how to reach out.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">How do I apply for an internship?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about internship process and requirements.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">Who funds Makers?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about GIZ, USAID, and partnership model.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">What kind of research does Makers conduct?</p>
-              <p class="text-gray-500 text-xs mt-1">Answer about market analysis, sector mapping, and research services.</p>
+              <h3 class="text-white font-semibold mb-1">Major Partners</h3>
+              <p class="text-gray-400 text-sm">GIZ, USAID, ILO, IOM, WFP, GEN, UNICEF, UNFPA, US Embassy, Australian Embassy, DRC, WUSC, European Union, Central Bank of Iraq, KfW, Zain, World Learning, FabLabs Network</p>
             </div>
           </div>
-          <p class="text-sm text-gray-500 mt-4 italic">Finalize questions based on most common inquiries. Accordion expand/collapse interaction.</p>
         </div>
       </section>
 
-      <!-- Section 9: Contact & Location -->
+      <!-- Section 9: FAQs -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">09</span>
-          <h2 class="text-2xl font-bold text-white">Contact & Location</h2>
+          <h2 class="text-2xl font-bold text-white">FAQs</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <p class="text-sm text-gray-500 uppercase tracking-wide mb-3">Contact Info</p>
-              <ul class="space-y-2 text-gray-300">
-                <li><span class="text-amber-500">Email:</span> hello@makersiq.org</li>
-                <li><span class="text-amber-500">Phone:</span> +9647834915325</li>
-                <li><span class="text-amber-500">Facebook:</span> facebook.com/iotmakeriq</li>
-                <li><span class="text-amber-500">Instagram:</span> instagram.com/makers.iq</li>
-                <li><span class="text-amber-500">YouTube:</span> Makers YouTube Channel</li>
-              </ul>
-              <p class="text-sm text-gray-500 mt-3 italic">Simple contact form or direct email link.</p>
+          <p class="text-sm text-gray-500 mb-4">Accordion-style FAQ section. Updated to remove "programs" references.</p>
+          <div class="space-y-3">
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">What does Makers of Baghdad do?</p>
+              <p class="text-gray-500 text-xs mt-1">Overview of employment, business support, and research pillars.</p>
             </div>
-            <div>
-              <p class="text-sm text-gray-500 uppercase tracking-wide mb-3">Location</p>
-              <ul class="space-y-2 text-gray-300">
-                <li><span class="text-amber-500">Map:</span> Google Maps embed showing Makers location</li>
-                <li><span class="text-amber-500">Address:</span> Al Sina'a Street, Baghdad, Al Rusafa, 10069, Iraq</li>
-              </ul>
-              <p class="text-sm text-gray-500 mt-3 italic">Full space details (co-work, training halls, amenities) live on the About Us page.</p>
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">How can Makers help my business or SME?</p>
+              <p class="text-gray-500 text-xs mt-1">Business development, mentorship, investment readiness.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">Can Makers build a custom tech solution for my business?</p>
+              <p class="text-gray-500 text-xs mt-1">Makers Suite overview and contact CTA.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">What services does Makers offer?</p>
+              <p class="text-gray-500 text-xs mt-1">Training halls, curriculum development, co-working, financial understanding, investment readiness.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">Who are Makers' partners?</p>
+              <p class="text-gray-500 text-xs mt-1">GIZ, USAID, ILO, IOM, and other international organizations.</p>
+            </div>
+            <div class="bg-gray-800 rounded p-4">
+              <p class="text-white font-semibold text-sm">What kind of research does Makers conduct?</p>
+              <p class="text-gray-500 text-xs mt-1">Sector analysis, skills mapping, fintech research, private sector mapping.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 10: Footer -->
+      <!-- Section 10: Contact Form -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">10</span>
+          <h2 class="text-2xl font-bold text-white">Contact Form</h2>
+          <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Changed to Form</span>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <p class="text-sm text-gray-500 mb-4">Contact form replacing old contact info + map layout.</p>
+          <ul class="space-y-2 text-gray-300">
+            <li><span class="text-amber-500">Fields:</span> Full Name, Email, Subject, Message</li>
+            <li><span class="text-amber-500">CTA:</span> "Send Message" button</li>
+            <li><span class="text-amber-500">Side Info:</span> Email, phone, social links, address still visible alongside the form</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 11: Footer -->
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">11</span>
           <h2 class="text-2xl font-bold text-white">Footer</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <ul class="space-y-2 text-gray-300">
             <li><span class="text-amber-500">Logo:</span> Makers logo</li>
-            <li><span class="text-amber-500">Quick Links:</span> All navigation items</li>
+            <li><span class="text-amber-500">Quick Links:</span> Who We Are, Previous Work, Data Hub, Contact</li>
             <li><span class="text-amber-500">Social Icons:</span> Facebook, Instagram, YouTube</li>
             <li><span class="text-amber-500">Copyright:</span> &copy; 2024 Makers of Baghdad. All rights reserved.</li>
           </ul>
@@ -340,70 +349,35 @@
       </section>
 
       <!-- ═══════════════════════════════════════ -->
-      <!-- ABOUT US PAGE -->
+      <!-- WHO WE ARE PAGE -->
       <!-- ═══════════════════════════════════════ -->
 
       <div class="mb-8 mt-16">
-        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">About Us Page ( /about ) — Coming Soon</h2>
+        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">Who We Are Page ( /about ) — Coming Soon</h2>
       </div>
 
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Coming Soon Page</span>
-          <h2 class="text-2xl font-bold text-white">About Us + The Space</h2>
+          <h2 class="text-2xl font-bold text-white">Who We Are + The Space</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">This page shows "Coming Soon" to users. The sections below are documented as TODOs for when the page is built.</p>
-
+          <p class="text-sm text-gray-500 mb-4">This page shows "Coming Soon" to users. Same TODO items as before.</p>
           <div class="space-y-6">
             <div class="border-l-2 border-amber-500/50 pl-4">
               <h3 class="text-white font-semibold mb-2">About Us Section</h3>
               <ul class="space-y-1 text-gray-400 text-sm">
                 <li>- Full origin story (founded 2017 as IoT Maker, rebranded to Makers of Baghdad)</li>
-                <li>- Detailed mission statement</li>
-                <li>- Backing: GIZ (German Federal Ministry for Economic Cooperation) and USAID</li>
-                <li>- Team photo</li>
-                <li>- Team members / leadership (if applicable)</li>
+                <li>- Mission: data-driven hub empowering entrepreneurs and SME owners across Iraq</li>
+                <li>- Backing: GIZ, USAID, ILO, IOM, and other partners</li>
+                <li>- Team photo and leadership</li>
               </ul>
             </div>
-
             <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">The Space — Co-Working</h3>
+              <h3 class="text-white font-semibold mb-2">The Space</h3>
               <ul class="space-y-1 text-gray-400 text-sm">
-                <li>- Description of the co-working area</li>
-                <li>- Amenities: High-speed WiFi, workstations, coffee/tea</li>
-                <li>- Photos of the co-working space</li>
-                <li>- <span class="text-amber-400">CTA: "Apply to Co-Work" button/form</span></li>
-                <li>- Pricing info (if applicable)</li>
-              </ul>
-            </div>
-
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">The Space — Training Halls</h3>
-              <ul class="space-y-1 text-gray-400 text-sm">
-                <li>- Description of training hall facilities</li>
-                <li>- Capacity, equipment, setup</li>
-                <li>- Photos of training halls</li>
-                <li>- <span class="text-amber-400">CTA: "Register for Training Hall" button/form</span></li>
-              </ul>
-            </div>
-
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">The Space — Open Space</h3>
-              <ul class="space-y-1 text-gray-400 text-sm">
-                <li>- Description of the open/community area</li>
-                <li>- What it's used for (events, meetups, casual work)</li>
-                <li>- Photos</li>
-              </ul>
-            </div>
-
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">Location Details</h3>
-              <ul class="space-y-1 text-gray-400 text-sm">
-                <li>- Full address: Al Sina'a Street, Baghdad, Al Rusafa, 10069, Iraq</li>
-                <li>- Google Maps embed</li>
-                <li>- Directions / how to get there</li>
-                <li>- Operating hours</li>
+                <li>- Co-Working area, Training Halls, Open Space</li>
+                <li>- Location: Al Sina'a Street, Baghdad, Al Rusafa, 10069, Iraq</li>
               </ul>
             </div>
           </div>
@@ -411,54 +385,56 @@
       </section>
 
       <!-- ═══════════════════════════════════════ -->
-      <!-- PROGRAMS PAGE -->
+      <!-- PREVIOUS WORK PAGE -->
       <!-- ═══════════════════════════════════════ -->
 
       <div class="mb-8 mt-16">
-        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">Programs Page ( /programs ) — Coming Soon</h2>
+        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">Previous Work Page ( /previous-work )</h2>
       </div>
 
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Coming Soon Page</span>
-          <h2 class="text-2xl font-bold text-white">All Programs</h2>
+          <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">New Page</span>
+          <h2 class="text-2xl font-bold text-white">Previous Work Portfolio</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">This page shows "Coming Soon" to users. The sections below are documented as TODOs for when the page is built.</p>
-
+          <p class="text-sm text-gray-500 mb-4">Complete portfolio of all Makers projects with project details, team members, and Tawtheef platform showcase.</p>
           <div class="space-y-4">
             <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">Masarat</h3>
-              <p class="text-gray-400 text-sm">6-month job acceleration program covering programming, graphic design, and 3D modeling. Funded by USAID.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, eligibility, dates, apply CTA</p>
+              <h3 class="text-white font-semibold mb-2">Accomplishments Overview</h3>
+              <p class="text-gray-400 text-sm">15,000+ Beneficiaries, 200+ Training Sessions, 140+ Products, 200+ SMEs Supported, 2,000+ Jobs Created</p>
             </div>
             <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">Female Founders</h3>
-              <p class="text-gray-400 text-sm">Incubation program supporting and empowering women entrepreneurs in Iraq.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, eligibility, dates, apply CTA</p>
+              <h3 class="text-white font-semibold mb-2">Projects Table</h3>
+              <p class="text-gray-400 text-sm">20+ projects with: Name, Description, Duration, Donor, Grant Size</p>
             </div>
             <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">Climathon</h3>
-              <p class="text-gray-400 text-sm">Climate change hackathon tackling community climate challenges.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, past editions, dates, register CTA</p>
+              <h3 class="text-white font-semibold mb-2">The Team</h3>
+              <p class="text-gray-400 text-sm">Ali Taher, Ahmed Dawood, Sara Luay, Mustafa Ramzi, Noor Saad, Mina Talib — with roles and experience</p>
             </div>
             <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">Jump-Start</h3>
-              <p class="text-gray-400 text-sm">3-month internship program for graduates of Makers training programs.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, eligibility, dates, apply CTA</p>
-            </div>
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">10,000 Coders for Kids</h3>
-              <p class="text-gray-400 text-sm">Non-profit initiative by IoT Kids introducing coding and technology to children.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, age groups, schedule, register CTA</p>
-            </div>
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold">Maker Camp</h3>
-              <p class="text-gray-400 text-sm">Annual event bringing makers together.</p>
-              <p class="text-gray-500 text-xs mt-1">TODO: Detailed description, past editions, dates, register CTA</p>
+              <h3 class="text-white font-semibold mb-2">Tawtheef Platform Showcase</h3>
+              <p class="text-gray-400 text-sm">Full feature overview, objectives, services, outreach strategy, sustainability plan</p>
             </div>
           </div>
-          <p class="text-sm text-gray-500 mt-4 italic">Each program should have: full description, eligibility criteria, duration, dates, photos/media, and a CTA button to apply/register.</p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- DATA HUB PAGE -->
+      <!-- ═══════════════════════════════════════ -->
+
+      <div class="mb-8 mt-16">
+        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">Data Hub Page ( /data-hub ) — Coming Soon</h2>
+      </div>
+
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">New Page — Coming Soon</span>
+          <h2 class="text-2xl font-bold text-white">Data Hub</h2>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <p class="text-sm text-gray-500">Coming Soon placeholder page. Future home of Makers' data-driven research, reports, and sector mapping insights.</p>
         </div>
       </section>
 

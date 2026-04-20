@@ -1,28 +1,28 @@
 <script setup lang="ts">
 const faqs = [
   {
-    question: 'How can I join a training program?',
-    answer: 'We run intensive bootcamps throughout the year in web development, mobile, UI/UX, and more. Check our Programs page for upcoming sessions and registration details.',
+    question: 'What does Makers of Baghdad do?',
+    answer: 'Makers of Baghdad is a data-driven hub empowering entrepreneurs and SME owners across Iraq through three pillars: employment, business and SME development, and research. We connect talent with the private sector, government, and international partners.',
   },
   {
-    question: 'What is the co-working space and how do I book?',
-    answer: 'Our co-working space offers desks, high-speed WiFi, and a community of makers in central Baghdad. Visit our About page for amenities and booking information.',
+    question: 'How can Makers help my business or SME?',
+    answer: 'We provide mentorship, acceleration, and technical support in business development, financial systems, and legal frameworks. Our investment readiness services prepare businesses for funding opportunities across Iraq.',
   },
   {
     question: 'Can Makers build a custom tech solution for my business?',
-    answer: 'Yes. We\'ve built everything from employment platforms to reporting systems. Reach out through our contact section and we\'ll discuss your project.',
+    answer: 'Yes. Through our Makers Suite, we\'ve built everything from employment platforms to reporting systems. Reach out through our contact form and we\'ll discuss your project.',
   },
   {
-    question: 'How do I apply for an internship?',
-    answer: 'Internships are available for graduates of our training programs. You\'ll work alongside our dev team on real products with real deadlines. Contact us to learn about current openings.',
+    question: 'What services does Makers offer?',
+    answer: 'We offer training halls, curriculum development, co-working spaces, financial understanding workshops, and investment readiness support — all designed to help businesses and individuals grow.',
   },
   {
-    question: 'Who funds Makers?',
-    answer: 'Makers is supported by GIZ (German Corporation for International Cooperation) and USAID, among other partners committed to developing Iraq\'s tech ecosystem.',
+    question: 'Who are Makers\' partners?',
+    answer: 'Makers is supported by GIZ, USAID, ILO, IOM, WFP, the US Embassy, the European Union, and many other international organizations committed to developing Iraq\'s ecosystem.',
   },
   {
     question: 'What kind of research does Makers conduct?',
-    answer: 'We analyze sectors and map the Iraqi market to provide actionable insights — helping businesses and organizations make data-driven decisions.',
+    answer: 'We produce data-driven studies including sector analysis, skills mapping, fintech landscape research, and private sector mapping — providing actionable insights for policymakers and businesses.',
   },
 ]
 

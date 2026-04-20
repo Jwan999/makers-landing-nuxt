@@ -5,6 +5,7 @@
     <AboutTeaser />
     <PillarsSection />
     <SolutionsSection />
+    <ServicesSection />
     <ImpactSection />
     <PartnersSection />
     <FaqSection />
