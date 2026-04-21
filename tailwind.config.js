@@ -16,6 +16,7 @@ export default {
         zinc: {
           50: '#fafafa',
           100: '#f4f4f5',
+          150: '#ececee',
           200: '#e4e4e7',
           300: '#d4d4d8',
           400: '#a1a1aa',
@@ -29,6 +30,7 @@ export default {
       },
       fontFamily: {
         dosis: ['Dosis', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
         'custom': '40%',

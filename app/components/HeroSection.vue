@@ -1,73 +1,92 @@
 <script setup lang="ts">
 const stats = [
-  { number: '50,000+', label: 'Visitors' },
-  { number: '15,000+', label: 'Beneficiaries' },
-  { number: '2,000+', label: 'Jobs Created' },
-  { number: '200+', label: 'SMEs Supported' },
+  { n: '50,000+', l: 'Visitors',       size: 'xl', pos: { top: '22%', left: '8%'  } },
+  { n: '15,000+', l: 'Beneficiaries',  size: 'lg', pos: { top: '18%', right: '10%' } },
+  { n: '2,000+',  l: 'Jobs Created',   size: 'lg', pos: { top: '60%', left: '12%' } },
+  { n: '200+',    l: 'SMEs Supported', size: 'xl', pos: { top: '64%', right: '8%'  } },
 ]
+
+const chipClass = (size: string) =>
+  size === 'xl'
+    ? 'px-[26px] py-[22px] [--num-size:64px] [--lab-size:12px]'
+    : 'px-[22px] py-[18px] [--num-size:52px] [--lab-size:11px]'
 </script>
 
 <template>
-  <section class="relative min-h-screen flex items-center bg-zinc-900 overflow-hidden">
-    <!-- Background Decorations -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div
-        class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-orange-700/10 animate-bubble"
-        style="animation-delay: 0.2s"
-      />
-      <div
-        class="absolute top-1/2 -left-20 w-[300px] h-[300px] rounded-full bg-orange-700/5 animate-bubble"
-        style="animation-delay: 0.5s"
-      />
-      <div
-        class="absolute bottom-32 right-1/4 w-[150px] h-[150px] rounded-full bg-orange-700/8 animate-float"
-      />
-      <div class="absolute top-1/3 right-1/3 w-24 h-24 rounded-full border-2 border-orange-700/20 animate-ring-pulse" />
+  <section class="relative min-h-screen bg-zinc-50 text-zinc-950 flex items-center overflow-hidden py-[120px]">
+    <!-- Concentric orbit rings -->
+    <div aria-hidden class="pointer-events-none absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-zinc-200" style="width: min(86vw, 1080px);" />
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-dashed border-zinc-300" style="width: min(58vw, 740px);" />
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-zinc-200" style="width: min(34vw, 440px);" />
     </div>
 
-    <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl relative z-10 pt-24">
-      <div class="max-w-3xl">
-        <!-- Tagline -->
-        <p class="text-orange-400 text-lg font-semibold mb-4 animate-fade-in-up animate-fade-in-up-1">
-          Baghdad's Data-Driven Hub
-        </p>
+    <!-- Orbiting stat chips (hidden on small screens) -->
+    <div class="hero-orbit-chips absolute inset-0 z-[2] hidden lg:block">
+      <div
+        v-for="(s, i) in stats"
+        :key="i"
+        :class="['absolute bg-zinc-950 text-white rounded-[18px] flex flex-col gap-1 min-w-max', chipClass(s.size)]"
+        :style="{
+          top: s.pos.top,
+          left: s.pos.left,
+          right: s.pos.right,
+          boxShadow: '0 6px 0 rgba(0,0,0,0.2), 0 18px 40px rgba(0,0,0,0.25)',
+        }"
+      >
+        <div class="font-bold leading-[0.95] tracking-[-0.02em] text-[var(--orange)]" :style="{ fontSize: 'var(--num-size)' }">
+          {{ s.n }}
+        </div>
+        <div class="mono text-zinc-400" :style="{ fontSize: 'var(--lab-size)', letterSpacing: '0.14em' }">{{ s.l }}</div>
+      </div>
+    </div>
 
-        <!-- Main Headline -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up animate-fade-in-up-2">
-          Empowering
-          <span class="animate-shimmer">Businesses</span>
-          Across Iraq
+    <!-- Center column -->
+    <div class="container-m relative z-[3]">
+      <div class="max-w-[820px] mx-auto text-center">
+        <div class="mono mb-6 text-[var(--orange)]">— BAGHDAD'S DATA-DRIVEN HUB · SINCE 2017 —</div>
+        <h1 class="font-bold text-zinc-950 leading-[1.05]" style="font-size: clamp(40px, 5.6vw, 76px); letter-spacing: -0.03em;">
+          Empowering entrepreneurs and SME owners<br />
+          across
+          <span class="bg-zinc-950 text-[var(--orange)] rounded-[10px] px-[14px] inline-block">Iraq.</span>
         </h1>
-
-        <!-- Sub copy -->
-        <p class="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 animate-fade-in-up animate-fade-in-up-3" style="line-height: 1.7;">
-          We boost youth employability and create job opportunities by connecting talent with the private sector, government, and international partners.
+        <p class="body-lg text-zinc-600 mt-6 max-w-[60ch] mx-auto">
+          Through capacity building, applied research, and ecosystem development — boosting youth employability and creating jobs by connecting talent with the private sector, government, and international partners.
         </p>
-
-        <!-- CTA -->
-        <div class="flex flex-wrap gap-4 mb-16 animate-fade-in-up animate-fade-in-up-4">
+        <div class="flex gap-3 justify-center mt-9 flex-wrap">
           <a
             href="#pillars"
-            class="px-10 py-3 bg-gradient-to-r from-orange-400 to-orange-700 text-white rounded-full text-lg font-semibold hover:from-orange-700 hover:to-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
+            class="inline-flex items-center gap-[10px] rounded-full px-8 py-4 bg-[var(--orange)] text-white font-semibold text-base"
+            style="box-shadow: 0 4px 0 var(--orange-600);"
           >
             Explore What We Do
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+            </svg>
           </a>
           <a
             href="#contact"
-            class="px-10 py-3 bg-transparent border border-zinc-600 text-zinc-300 rounded-full text-lg font-semibold hover:border-zinc-400 hover:text-white transition-all duration-200"
+            class="inline-flex items-center rounded-full px-8 py-4 bg-white text-zinc-950 font-semibold text-base border border-zinc-300"
+            style="box-shadow: 0 4px 0 rgba(0,0,0,0.06);"
           >
             Get In Touch
           </a>
         </div>
 
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:flex gap-8 md:gap-12 animate-fade-in-up animate-fade-in-up-5">
-          <div v-for="stat in stats" :key="stat.label">
-            <p class="text-3xl md:text-4xl font-extrabold text-orange-400">{{ stat.number }}</p>
-            <p class="text-zinc-500 text-[17px] font-medium mt-1">{{ stat.label }}</p>
+        <!-- Mobile fallback grid -->
+        <div class="hero-orbit-grid mt-11 grid gap-3 lg:hidden" :style="{ gridTemplateColumns: 'repeat(4, 1fr)' }">
+          <div v-for="(s, i) in stats" :key="i" class="bg-zinc-950 text-white rounded-xl p-3 text-left">
+            <div class="font-bold text-[var(--orange)] text-[28px] leading-none">{{ s.n }}</div>
+            <div class="mono text-zinc-400 mt-1" style="font-size: 9.5px;">{{ s.l }}</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+@media (max-width: 520px) {
+  .hero-orbit-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+</style>

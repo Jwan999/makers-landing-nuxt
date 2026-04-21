@@ -1,36 +1,69 @@
 <script setup lang="ts">
-const stats = [
-  { number: '50,000+', label: 'Visitors' },
-  { number: '15,000+', label: 'Beneficiaries' },
-  { number: '200+', label: 'Training Sessions' },
-  { number: '140+', label: 'Products Built' },
-  { number: '200+', label: 'SMEs Supported' },
-  { number: '2,000+', label: 'Jobs Created' },
-  { number: '49%', label: 'Female Participants' },
-  { number: '6+', label: 'Years Running' },
+const STATS = [
+  { n: '50,000+', l: 'Visitors' },
+  { n: '15,000+', l: 'Beneficiaries' },
+  { n: '200+',    l: 'Training Sessions' },
+  { n: '140+',    l: 'Products Built' },
+  { n: '200+',    l: 'SMEs Supported' },
+  { n: '2,000+',  l: 'Jobs Created' },
+  { n: '49%',     l: 'Female Participants' },
+  { n: '6+',      l: 'Years Running' },
 ]
+
+const idx = ref(0)
+const current = computed(() => STATS[idx.value])
+let timer: ReturnType<typeof setInterval> | null = null
+
+onMounted(() => {
+  timer = setInterval(() => {
+    idx.value = (idx.value + 1) % STATS.length
+  }, 2800)
+})
+
+onBeforeUnmount(() => {
+  if (timer) clearInterval(timer)
+})
 </script>
 
 <template>
-  <section id="impact" class="py-24 bg-zinc-900">
-    <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl">
-      <div class="text-center mb-16">
-        <p class="text-orange-400 font-semibold text-lg mb-3">Our Impact</p>
-        <h2 class="text-3xl md:text-5xl font-bold text-white">By The Numbers</h2>
-        <p class="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">
-          Real results from years of empowering businesses, creating jobs, and building Iraq's ecosystem.
-        </p>
+  <section
+    id="impact"
+    class="relative overflow-hidden flex items-center py-[120px]"
+    style="background: var(--orange); color: var(--zinc-950); min-height: 80vh;"
+  >
+    <div class="container-m text-center relative">
+      <div class="mono mb-5">
+        BY THE NUMBERS — {{ String(idx + 1).padStart(2, '0') }}/{{ String(STATS.length).padStart(2, '0') }}
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <div
-          v-for="stat in stats"
-          :key="stat.label"
-          class="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 text-center hover:border-orange-700/50 transition-all duration-300"
-        >
-          <p class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">{{ stat.number }}</p>
-          <p class="text-zinc-400 text-sm font-medium">{{ stat.label }}</p>
-        </div>
+      <div
+        class="font-bold text-zinc-950"
+        style="font-size: clamp(80px, 20vw, 280px); line-height: 0.9; letter-spacing: -0.04em;"
+      >
+        {{ current.n }}
+      </div>
+      <div
+        class="font-medium mt-2.5"
+        style="font-size: clamp(20px, 2.4vw, 32px); color: rgba(24,24,27,0.75);"
+      >
+        {{ current.l }}
+      </div>
+
+      <div class="flex gap-2 justify-center mt-12">
+        <button
+          v-for="(_, i) in STATS"
+          :key="i"
+          type="button"
+          class="rounded transition-all"
+          :style="{
+            width: i === idx ? '32px' : '8px',
+            height: '8px',
+            borderRadius: '4px',
+            background: i === idx ? 'var(--zinc-950)' : 'rgba(24,24,27,0.3)',
+            transitionDuration: '0.25s',
+          }"
+          @click="idx = i"
+        />
       </div>
     </div>
   </section>

@@ -1,92 +1,76 @@
 <script setup lang="ts">
-const faqs = [
+const FAQS = [
   {
-    question: 'What does Makers of Baghdad do?',
-    answer: 'Makers of Baghdad is a data-driven hub empowering entrepreneurs and SME owners across Iraq through three pillars: employment, business and SME development, and research. We connect talent with the private sector, government, and international partners.',
+    q: 'What does Makers of Baghdad do?',
+    a: 'We are a data-driven hub empowering entrepreneurs and SME owners across Iraq through three pillars: employment, business and SME support, and applied research.',
   },
   {
-    question: 'How can Makers help my business or SME?',
-    answer: 'We provide mentorship, acceleration, and technical support in business development, financial systems, and legal frameworks. Our investment readiness services prepare businesses for funding opportunities across Iraq.',
+    q: 'How can Makers help my business or SME?',
+    a: 'Through business development, mentorship, acceleration, and investment readiness — including data-room support, financial management training, and connections to funding opportunities.',
   },
   {
-    question: 'Can Makers build a custom tech solution for my business?',
-    answer: 'Yes. Through our Makers Suite, we\'ve built everything from employment platforms to reporting systems. Reach out through our contact form and we\'ll discuss your project.',
+    q: 'Can Makers build a custom tech solution for my business?',
+    a: "Yes. Our Makers Suite includes platforms we've built in-house (Tawtheef, Contract Generator, Judging Panel, Reports System and more). Reach out via the contact form and we'll discuss.",
   },
   {
-    question: 'What services does Makers offer?',
-    answer: 'We offer training halls, curriculum development, co-working spaces, financial understanding workshops, and investment readiness support — all designed to help businesses and individuals grow.',
+    q: 'What services does Makers offer?',
+    a: 'Training halls, curriculum development, co-working spaces, financial understanding support, and investment readiness programming — built on six years of experience.',
   },
   {
-    question: 'Who are Makers\' partners?',
-    answer: 'Makers is supported by GIZ, USAID, ILO, IOM, WFP, the US Embassy, the European Union, and many other international organizations committed to developing Iraq\'s ecosystem.',
+    q: "Who are Makers' partners?",
+    a: 'GIZ, USAID, ILO, IOM, WFP, GEN, UNICEF, UNFPA, the US and Australian Embassies, DRC, WUSC, European Union, Central Bank of Iraq, KfW, Zain, World Learning and the FabLabs Network.',
   },
   {
-    question: 'What kind of research does Makers conduct?',
-    answer: 'We produce data-driven studies including sector analysis, skills mapping, fintech landscape research, and private sector mapping — providing actionable insights for policymakers and businesses.',
+    q: 'What kind of research does Makers conduct?',
+    a: 'Sector analysis, skills mapping, fintech research, and private-sector mapping — data-driven studies that inform policy and program design.',
   },
 ]
 
-const openIndex = ref<number | null>(null)
+const open = ref<number>(0)
 
-function toggle(index: number) {
-  openIndex.value = openIndex.value === index ? null : index
+function toggle(i: number) {
+  open.value = open.value === i ? -1 : i
 }
 </script>
 
 <template>
-  <section class="py-24 bg-zinc-900">
-    <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl">
-      <div class="text-center mb-16">
-        <p class="text-orange-400 font-semibold text-lg mb-3">FAQ</p>
-        <h2 class="text-3xl md:text-5xl font-bold text-white">Common Questions</h2>
+  <section class="bg-zinc-950 text-white py-[120px]">
+    <div class="container-m">
+      <div class="text-center mb-[60px]">
+        <div class="eyebrow centered">FAQ</div>
+        <h2 class="h-section text-white">Common questions.</h2>
       </div>
 
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="max-w-[720px] mx-auto">
         <div
-          v-for="(faq, index) in faqs"
-          :key="index"
-          class="bg-zinc-800 border border-zinc-700/50 rounded-2xl overflow-hidden transition-all duration-300"
-          :class="openIndex === index ? 'border-orange-700/50' : ''"
+          v-for="(f, i) in FAQS"
+          :key="i"
+          class="border-b border-zinc-800 py-2"
         >
           <button
-            class="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
-            @click="toggle(index)"
+            type="button"
+            class="w-full flex items-center justify-between py-[18px] text-left"
+            @click="toggle(i)"
           >
-            <span class="text-white font-semibold text-[17px]">{{ faq.question }}</span>
-            <svg
-              class="w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-300"
-              :class="openIndex === index ? 'rotate-180' : ''"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <span class="text-lg font-semibold">{{ f.q }}</span>
+            <span
+              class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-lg leading-none"
+              :class="open === i
+                ? 'bg-[var(--orange)] border border-[var(--orange)] text-white'
+                : 'border border-zinc-700 text-zinc-400'"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+              {{ open === i ? '–' : '+' }}
+            </span>
           </button>
-          <Transition name="expand">
-            <div v-if="openIndex === index" class="px-6 pb-5">
-              <p class="text-zinc-400 text-[17px] leading-relaxed">{{ faq.answer }}</p>
-            </div>
-          </Transition>
+          <p
+            v-if="open === i"
+            class="text-zinc-400 leading-[1.6] pb-5 max-w-[60ch]"
+            style="font-size: 16px;"
+          >
+            {{ f.a }}
+          </p>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.expand-enter-active, .expand-leave-active {
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-.expand-enter-from, .expand-leave-to {
-  opacity: 0;
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.expand-enter-to, .expand-leave-from {
-  opacity: 1;
-  max-height: 200px;
-}
-</style>

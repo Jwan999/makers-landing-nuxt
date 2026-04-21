@@ -1,25 +1,59 @@
+<script setup lang="ts">
+const events = [
+  { y: '2017', l: 'Founded as IoT Maker' },
+  { y: '2019', l: 'First GIZ partnership' },
+  { y: '2020', l: 'Grew co-working + training facilities' },
+  { y: '2022', l: 'Rebranded to Makers of Baghdad' },
+  { y: '2023', l: 'Launched Makers Suite' },
+  { y: 'Now',  l: "Iraq's data-driven hub" },
+]
+</script>
+
 <template>
-  <section class="py-24 bg-zinc-900">
-    <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-orange-400 font-semibold text-lg mb-3">Who We Are</p>
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-          Baghdad's Data-Driven Hub Since 2017
-        </h2>
-        <p class="text-zinc-400 text-lg leading-relaxed mb-4">
-          Makers of Baghdad is a data-driven hub empowering entrepreneurs and SME owners across Iraq
-          through capacity building, applied research, and entrepreneurial ecosystem development.
-          Supported by GIZ, USAID, ILO, and international partners.
+  <section class="bg-zinc-50 py-[120px] overflow-hidden">
+    <div class="container-m">
+      <div class="flex justify-between items-end mb-[60px] flex-wrap gap-6">
+        <div>
+          <div class="eyebrow">Who We Are</div>
+          <h2 class="h-section">A data-driven hub<br />empowering Iraq's<br />entrepreneurs.</h2>
+        </div>
+        <p class="body-lg text-zinc-600 max-w-[46ch]">
+          Makers is a data-driven hub empowering entrepreneurs and SME owners across Iraq — backed by GIZ, USAID, ILO, IOM, and other international partners.
         </p>
+      </div>
+
+      <!-- Timeline rail -->
+      <div class="relative pt-[60px]">
+        <div class="absolute left-0 right-0 h-[2px] bg-zinc-200" style="top: calc(60px + 11px);" />
+        <div class="grid gap-4" :style="{ gridTemplateColumns: `repeat(${events.length}, 1fr)` }">
+          <div v-for="(e, i) in events" :key="i" class="relative">
+            <div
+              class="absolute left-0 text-[22px] font-bold"
+              :class="i === events.length - 1 ? 'text-[var(--orange)]' : 'text-zinc-900'"
+              style="top: -50px;"
+            >
+              {{ e.y }}
+            </div>
+            <div
+              class="w-6 h-6 rounded-full relative z-10"
+              :class="i === events.length - 1 ? 'bg-[var(--orange)] border-2 border-[var(--orange)]' : 'bg-white border-2 border-zinc-300'"
+            />
+            <div class="mt-4 text-sm text-zinc-600 leading-snug max-w-[14ch]">{{ e.l }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-[60px] text-center">
         <NuxtLink
           to="/about"
-          class="inline-flex items-center gap-2 mt-6 text-orange-400 hover:text-orange-300 font-semibold text-lg transition-colors"
+          class="inline-flex items-center gap-[10px] px-6 py-[14px] bg-zinc-900 text-white rounded-full font-semibold"
         >
           Learn More About Us
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
           </svg>
         </NuxtLink>
+        <div class="mono text-zinc-400 mt-3">/about · coming soon</div>
       </div>
     </div>
   </section>
