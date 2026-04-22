@@ -46,14 +46,13 @@ const events = [
       <div class="mt-[60px] text-center">
         <NuxtLink
           to="/about"
-          class="inline-flex items-center gap-[10px] px-6 py-[14px] bg-zinc-900 text-white rounded-full font-semibold"
+          class="inline-flex items-center justify-center gap-[10px] px-6 py-[14px] bg-zinc-900 text-white rounded-full font-bold leading-none"
         >
-          Learn More About Us
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+          <span>Learn More About Us</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+            <path d="M5 12h14" /><path d="m13 6 6 6-6 6" />
           </svg>
         </NuxtLink>
-        <div class="mono text-zinc-400 mt-3">/about · coming soon</div>
       </div>
     </div>
   </section>

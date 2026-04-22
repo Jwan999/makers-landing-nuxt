@@ -1,16 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: 'Dosis';
-  src: url('~/assets/fonts/Dosis-VariableFont_wght.woff') format('woff');
-  font-weight: 200 800;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --orange: #E26701;
@@ -45,7 +37,10 @@ body {
   background: var(--zinc-50);
   color: var(--zinc-900);
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+  line-height: 1.55;
+  /* Default body: Dosis Medium (500) — readable without being heavy */
+  font-weight: 500;
+  font-size: 18px;
 }
 
 /* ==== Shared layout / typography ==== */
@@ -58,19 +53,19 @@ body {
 
 .mono {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .eyebrow {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
-  font-weight: 600;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -103,8 +98,11 @@ body {
   letter-spacing: -0.02em;
 }
 
-.body-lg { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.55; }
-.body-r  { font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; }
+/* Readable body sizes */
+.body-lg { font-size: clamp(17px, 1.4vw, 20px); line-height: 1.6; font-weight: 500; }
+.body-r  { font-size: clamp(16px, 1.2vw, 18px); line-height: 1.6; font-weight: 500; }
+/* Caption/secondary */
+.caption { font-size: 14px; line-height: 1.5; font-weight: 600; }
 
 /* ==== Legacy animations (kept for back-compat) ==== */
 @keyframes float {

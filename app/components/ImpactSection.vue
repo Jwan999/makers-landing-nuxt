@@ -28,8 +28,8 @@ onBeforeUnmount(() => {
 <template>
   <section
     id="impact"
-    class="relative overflow-hidden flex items-center py-[120px]"
-    style="background: var(--orange); color: var(--zinc-950); min-height: 80vh;"
+    class="relative overflow-hidden flex items-center py-[120px] text-white"
+    style="background: var(--orange); min-height: 80vh;"
   >
     <div class="container-m text-center relative">
       <div class="mono mb-5">
@@ -37,14 +37,14 @@ onBeforeUnmount(() => {
       </div>
 
       <div
-        class="font-bold text-zinc-950"
-        style="font-size: clamp(80px, 20vw, 280px); line-height: 0.9; letter-spacing: -0.04em;"
+        class="font-bold text-white"
+        style="font-size: clamp(96px, 22vw, 320px); line-height: 0.9; letter-spacing: -0.04em;"
       >
         {{ current.n }}
       </div>
       <div
-        class="font-medium mt-2.5"
-        style="font-size: clamp(20px, 2.4vw, 32px); color: rgba(24,24,27,0.75);"
+        class="font-bold mt-2.5"
+        style="font-size: clamp(22px, 2.4vw, 32px); color: rgba(255,255,255,0.9);"
       >
         {{ current.l }}
       </div>
@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
             width: i === idx ? '32px' : '8px',
             height: '8px',
             borderRadius: '4px',
-            background: i === idx ? 'var(--zinc-950)' : 'rgba(24,24,27,0.3)',
+            background: i === idx ? '#fff' : 'rgba(255,255,255,0.4)',
             transitionDuration: '0.25s',
           }"
           @click="idx = i"

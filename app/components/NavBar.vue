@@ -28,7 +28,10 @@ onMounted(() => {
         <div class="w-10 h-10 bg-orange-700 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-orange-500/25">
           <img src="~/assets/svgs/tawtheefLogo.svg" alt="Makers" class="w-6 h-6 brightness-0 invert" />
         </div>
-        <span class="text-white font-bold text-xl">Makers</span>
+        <span
+          class="font-bold text-xl transition-colors"
+          :class="scrolled ? 'text-white' : 'text-zinc-950'"
+        >Makers</span>
       </a>
 
       <!-- Desktop Links -->
@@ -37,13 +40,14 @@ onMounted(() => {
           v-for="link in links"
           :key="link.href"
           :to="link.href"
-          class="text-zinc-300 hover:text-white transition-colors duration-200 text-[17px] font-medium"
+          class="transition-colors duration-200 text-[18px] font-bold hover:text-orange-500"
+          :class="scrolled ? 'text-white' : 'text-zinc-950'"
         >
           {{ link.label }}
         </NuxtLink>
         <a
           href="/#contact"
-          class="px-6 py-2 bg-orange-700 text-white rounded-full text-[17px] font-semibold hover:bg-orange-600 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
+          class="px-6 py-2 bg-orange-700 text-white rounded-full text-[18px] font-bold hover:bg-orange-600 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
         >
           Get Involved
         </a>
@@ -51,7 +55,8 @@ onMounted(() => {
 
       <!-- Mobile Toggle -->
       <button
-        class="md:hidden text-white p-2"
+        class="md:hidden p-2"
+        :class="scrolled ? 'text-white' : 'text-zinc-950'"
         @click="mobileOpen = !mobileOpen"
         aria-label="Toggle menu"
       >
@@ -71,14 +76,14 @@ onMounted(() => {
           v-for="link in links"
           :key="link.href"
           :to="link.href"
-          class="block py-3 text-zinc-300 hover:text-white transition-colors text-[17px] font-medium"
+          class="block py-3 text-white hover:text-orange-400 transition-colors text-[18px] font-bold"
           @click="mobileOpen = false"
         >
           {{ link.label }}
         </NuxtLink>
         <a
           href="/#contact"
-          class="block mt-3 px-6 py-3 bg-orange-700 text-white rounded-full text-center text-[17px] font-semibold"
+          class="block mt-3 px-6 py-3 bg-orange-700 text-white rounded-full text-center text-[18px] font-bold"
           @click="mobileOpen = false"
         >
           Get Involved

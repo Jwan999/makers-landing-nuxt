@@ -34,38 +34,50 @@ function toggle(i: number) {
 </script>
 
 <template>
-  <section class="bg-zinc-950 text-white py-[120px]">
+  <section class="bg-zinc-50 text-zinc-950 py-[120px]">
     <div class="container-m">
       <div class="text-center mb-[60px]">
         <div class="eyebrow centered">FAQ</div>
-        <h2 class="h-section text-white">Common questions.</h2>
+        <h2 class="h-section text-zinc-950">Common questions.</h2>
       </div>
 
       <div class="max-w-[720px] mx-auto">
         <div
           v-for="(f, i) in FAQS"
           :key="i"
-          class="border-b border-zinc-800 py-2"
+          class="border-b border-zinc-200 py-2"
         >
           <button
             type="button"
             class="w-full flex items-center justify-between py-[18px] text-left"
             @click="toggle(i)"
           >
-            <span class="text-lg font-semibold">{{ f.q }}</span>
+            <span class="text-[20px] font-bold text-zinc-950">{{ f.q }}</span>
             <span
-              class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-lg leading-none"
+              class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors"
               :class="open === i
-                ? 'bg-[var(--orange)] border border-[var(--orange)] text-white'
-                : 'border border-zinc-700 text-zinc-400'"
+                ? 'bg-[var(--orange)] text-white'
+                : 'border border-zinc-300 text-zinc-500'"
             >
-              {{ open === i ? '–' : '+' }}
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                class="transition-transform duration-200"
+                :class="open === i ? 'rotate-180' : ''"
+              >
+                <path d="M5 12h14" />
+                <path v-if="open !== i" d="M12 5v14" />
+              </svg>
             </span>
           </button>
           <p
             v-if="open === i"
-            class="text-zinc-400 leading-[1.6] pb-5 max-w-[60ch]"
-            style="font-size: 16px;"
+            class="text-zinc-600 leading-[1.6] pb-5 max-w-[60ch] body-r"
           >
             {{ f.a }}
           </p>

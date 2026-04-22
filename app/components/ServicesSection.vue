@@ -51,7 +51,7 @@ const SERVICES = [
           style="grid-template-columns: 80px 1.4fr 2fr;"
         >
           <div
-            class="text-[28px] font-bold text-[var(--orange)] font-mono"
+            class="text-[32px] font-bold text-[var(--orange)] font-mono"
             style="letter-spacing: -0.02em;"
           >
             {{ String(i + 1).padStart(2, '0') }}

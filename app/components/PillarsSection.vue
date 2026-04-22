@@ -18,14 +18,18 @@ const PILLARS = [
 ]
 
 const R = 220
+const Y_LIFT = 60 // shift all boxes up into the empty ring space
 const hover = ref<number | null>(null)
+
+// Fixed angles (in degrees) — top + upper-right + upper-left, wide enough that cards don't collide
+const ANGLES_DEG = [-90, -25, -155]
 
 const positions = computed(() =>
   PILLARS.map((_, i) => {
-    const a = (i / PILLARS.length) * Math.PI * 2 - Math.PI / 2
+    const a = (ANGLES_DEG[i] * Math.PI) / 180
     return {
       x: Math.cos(a) * R,
-      y: Math.sin(a) * R,
+      y: Math.sin(a) * R - Y_LIFT,
     }
   })
 )
@@ -36,11 +40,11 @@ const positions = computed(() =>
     <div class="container-m">
       <div class="text-center mb-10">
         <div class="eyebrow centered">What We Do</div>
-        <h2 class="h-section text-white">Five pillars.<br />One foundation.</h2>
+        <h2 class="h-section text-white">Three pillars.<br />One foundation.</h2>
       </div>
 
       <div
-        class="relative mx-auto mt-[60px]"
+        class="relative mx-auto mt-[120px]"
         :style="{ width: R * 2 + 180 + 'px', height: R * 2 + 180 + 'px', maxWidth: '100%' }"
       >
         <div class="absolute inset-0 rounded-full border border-dashed border-zinc-800" />
@@ -65,11 +69,11 @@ const positions = computed(() =>
           <div class="mono mb-2" :class="hover === i ? 'text-white/70' : 'text-zinc-500'">
             0{{ i + 1 }}
           </div>
-          <div class="text-base font-bold">{{ p.title }}</div>
+          <div class="text-[19px] font-bold">{{ p.title }}</div>
         </div>
       </div>
 
-      <div class="max-w-[560px] mx-auto mt-[60px] min-h-[60px] text-center">
+      <div class="max-w-[560px] mx-auto mt-[-220px] relative z-10 min-h-[60px] text-center">
         <p class="body-lg text-zinc-400">
           {{ hover !== null ? PILLARS[hover].desc : 'Hover a pillar to learn more.' }}
         </p>

@@ -27,7 +27,7 @@ const PARTNERS = [
       <div class="flex items-center gap-8 flex-wrap partners-wrap">
         <div class="flex-none max-w-full">
           <div class="mono mb-2" style="color: var(--orange);">PARTNERS</div>
-          <div class="text-2xl font-semibold max-w-[18ch]">
+          <div class="text-[26px] font-bold max-w-[18ch] leading-tight">
             Trusted and funded by global organizations.
           </div>
         </div>
@@ -39,8 +39,8 @@ const PARTNERS = [
             :class="i < PARTNERS.length - 1 ? 'border-r border-zinc-800' : ''"
             style="flex-basis: 200px;"
           >
-            <div class="text-[28px] font-bold">{{ p.name }}</div>
-            <div class="text-[13px] text-zinc-500 mt-1.5">{{ p.desc }}</div>
+            <div class="text-[30px] font-bold">{{ p.name }}</div>
+            <div class="caption text-zinc-400 mt-1.5">{{ p.desc }}</div>
           </div>
         </div>
       </div>

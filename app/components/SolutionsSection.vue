@@ -42,46 +42,49 @@ const current = computed(() => SOLUTIONS[active.value])
               S/0{{ i + 1 }}
             </div>
             <div>
-              <div class="text-xl font-semibold">{{ sol.title }}</div>
-              <div class="text-[13px] text-zinc-500 mt-0.5">{{ sol.tagline }}</div>
+              <div class="text-xl font-bold">{{ sol.title }}</div>
+              <div class="caption text-zinc-500 mt-0.5">{{ sol.tagline }}</div>
             </div>
             <div
-              class="w-7 h-7 rounded-full flex items-center justify-center"
+              class="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
               :class="active === i ? 'bg-[var(--orange)] text-white border-0' : 'border border-zinc-300 text-zinc-400'"
             >
-              →
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
             </div>
           </button>
         </div>
 
         <!-- Detail pane -->
         <div
-          class="bg-white rounded-3xl p-10 min-h-[520px] sticky"
+          class="bg-white rounded-3xl p-8 sticky"
           style="top: 140px; box-shadow: 0 4px 0 rgba(0,0,0,0.06), 0 12px 30px rgba(0,0,0,0.05);"
         >
           <div class="mono text-zinc-400">CASE STUDY · S/0{{ active + 1 }}</div>
-          <h3 class="mt-4 font-bold" style="font-size: 42px; letter-spacing: -0.02em;">{{ current.title }}</h3>
+          <h3 class="mt-3 font-bold" style="font-size: 42px; letter-spacing: -0.02em;">{{ current.title }}</h3>
           <div
-            class="inline-block mt-3 rounded-full text-[13px] font-semibold px-3 py-1.5"
+            class="inline-block mt-2 rounded-full text-[14px] font-bold px-3 py-1.5"
             style="background: var(--orange-50); color: var(--orange);"
           >
             {{ current.tagline }}
           </div>
-          <p class="body-lg text-zinc-600 mt-6">{{ current.desc }}</p>
+          <p class="body-lg text-zinc-600 mt-5">{{ current.desc }}</p>
 
           <div
-            class="mt-8 rounded-xl border border-dashed border-zinc-300 bg-zinc-100 flex flex-col items-center justify-center gap-2"
-            style="aspect-ratio: 16 / 10;"
+            class="mt-6 rounded-xl border border-dashed border-zinc-300 bg-zinc-100 flex flex-col items-center justify-center gap-2"
+            style="aspect-ratio: 16 / 7;"
           >
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400">
               <path d="M3 3h8v8H3z" /><path d="M13 3h8v8h-8z" /><path d="M3 13h8v8H3z" /><path d="M13 13h8v8h-8z" />
             </svg>
             <div class="mono text-zinc-500">PRODUCT SCREENSHOT · PLACEHOLDER</div>
           </div>
 
-          <div class="flex gap-3 mt-6">
-            <a href="#" class="px-[18px] py-2.5 bg-zinc-900 text-white rounded-full text-sm font-semibold">View case study</a>
-            <a href="#contact" class="px-[18px] py-2.5 border border-zinc-300 rounded-full text-sm font-semibold text-zinc-700">Request similar</a>
+          <div class="flex gap-3 mt-5">
+            <a href="#" class="px-[18px] py-2.5 bg-zinc-900 text-white rounded-full text-[15px] font-bold">View case study</a>
+            <a href="#contact" class="px-[18px] py-2.5 border border-zinc-300 rounded-full text-[15px] font-bold text-zinc-700">Request similar</a>
           </div>
         </div>
       </div>
