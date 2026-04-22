@@ -25,7 +25,7 @@ onMounted(() => {
     <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-3 group">
-        <img src="~/assets/svgs/makersLogo.svg" alt="Makers" class="w-10 h-10 transition-transform duration-300 group-hover:scale-105" />
+        <MakersMark :size="40" :color="scrolled ? '#ffffff' : '#18181b'" class="transition-transform duration-300 group-hover:scale-105" />
         <span
           class="font-bold text-xl transition-colors"
           :class="scrolled ? 'text-white' : 'text-zinc-950'"

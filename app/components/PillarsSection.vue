@@ -50,7 +50,7 @@ const positions = computed(() =>
         <div class="absolute inset-0 rounded-full border border-dashed border-zinc-800" />
 
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <MakersMark :size="90" color="#E26701" class="mx-auto" />
+          <MakersMark :size="90" color="#ffffff" class="mx-auto" />
           <div class="mono text-zinc-500 mt-[10px]">MAKERS</div>
         </div>
 
