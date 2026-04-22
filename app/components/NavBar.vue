@@ -25,9 +25,7 @@ onMounted(() => {
     <div class="container mx-auto px-6 lg:px-8 max-w-screen-xl flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 bg-orange-700 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-orange-500/25">
-          <img src="~/assets/svgs/tawtheefLogo.svg" alt="Makers" class="w-6 h-6 brightness-0 invert" />
-        </div>
+        <img src="~/assets/svgs/makersLogo.svg" alt="Makers" class="w-10 h-10 transition-transform duration-300 group-hover:scale-105" />
         <span
           class="font-bold text-xl transition-colors"
           :class="scrolled ? 'text-white' : 'text-zinc-950'"

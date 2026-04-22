@@ -3,9 +3,7 @@
     <NavBar />
     <section class="min-h-screen flex items-center justify-center bg-zinc-900">
       <div class="text-center px-6">
-        <div class="w-16 h-16 bg-orange-700 rounded-2xl flex items-center justify-center mx-auto mb-8">
-          <img src="~/assets/svgs/tawtheefLogo.svg" alt="Makers" class="w-10 h-10 brightness-0 invert" />
-        </div>
+        <img src="~/assets/svgs/makersLogo.svg" alt="Makers" class="w-20 h-20 mx-auto mb-8 brightness-0 invert" />
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Coming Soon</h1>
         <p class="text-zinc-400 text-lg max-w-md mx-auto mb-8">
           We're building out the Who We Are page. Check back soon for the full story.
