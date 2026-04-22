@@ -37,8 +37,8 @@ onBeforeUnmount(() => {
       </div>
 
       <div
-        class="font-bold text-white"
-        style="font-size: clamp(96px, 22vw, 320px); line-height: 0.9; letter-spacing: -0.04em;"
+        class="text-white"
+        style="font-size: clamp(96px, 22vw, 320px); line-height: 0.9; letter-spacing: -0.04em; font-weight: 500;"
       >
         {{ current.n }}
       </div>
