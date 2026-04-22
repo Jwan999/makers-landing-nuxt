@@ -13,7 +13,7 @@ const chipClass = (size: string) =>
 </script>
 
 <template>
-  <section class="relative min-h-screen bg-zinc-50 text-zinc-950 flex items-center overflow-hidden py-[120px]">
+  <section class="relative min-h-screen bg-zinc-50 text-zinc-950 flex items-center overflow-x-clip py-[120px]">
     <!-- Concentric orbit rings (decorative) -->
     <div aria-hidden class="pointer-events-none absolute inset-0">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-zinc-200" style="width: min(86vw, 1080px);" />

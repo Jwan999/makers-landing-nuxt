@@ -10,7 +10,7 @@ const events = [
 </script>
 
 <template>
-  <section class="bg-zinc-50 py-[120px] overflow-hidden">
+  <section class="bg-zinc-50 py-[120px] overflow-x-clip">
     <div class="container-m">
       <div class="flex justify-between items-end mb-[60px] flex-wrap gap-6">
         <div>
