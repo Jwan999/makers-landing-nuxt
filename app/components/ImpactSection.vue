@@ -14,6 +14,8 @@ const idx = ref(0)
 const current = computed(() => STATS[idx.value])
 let timer: ReturnType<typeof setInterval> | null = null
 
+const { el: parallaxEl, offset: parallaxOffset } = useParallax(0.15)
+
 onMounted(() => {
   timer = setInterval(() => {
     idx.value = (idx.value + 1) % STATS.length
@@ -31,14 +33,21 @@ onBeforeUnmount(() => {
     class="relative overflow-hidden flex items-center py-[120px] text-white"
     style="background: var(--orange); min-height: 80vh;"
   >
-    <div class="container-m text-center relative">
-      <div class="mono mb-5">
+    <div ref="parallaxEl" class="container-m text-center relative">
+      <Reveal as="div" class="mono mb-5">
         BY THE NUMBERS — {{ String(idx + 1).padStart(2, '0') }}/{{ String(STATS.length).padStart(2, '0') }}
-      </div>
+      </Reveal>
 
       <div
         class="text-white"
-        style="font-size: clamp(96px, 22vw, 320px); line-height: 0.9; letter-spacing: -0.04em; font-weight: 500;"
+        :style="{
+          fontSize: 'clamp(96px, 22vw, 320px)',
+          lineHeight: 0.9,
+          letterSpacing: '-0.04em',
+          fontWeight: 500,
+          transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+          willChange: 'transform',
+        }"
       >
         {{ current.n }}
       </div>

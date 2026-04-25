@@ -11,6 +11,8 @@ const links = [
 ]
 
 const year = new Date().getFullYear()
+
+const { el: parallaxEl, offset: parallaxOffset } = useParallax(0.12)
 </script>
 
 <template>
@@ -46,8 +48,17 @@ const year = new Date().getFullYear()
     </div>
 
     <div
+      ref="parallaxEl"
       class="mt-[60px] font-bold text-center select-none"
-      style="font-size: clamp(80px, 22vw, 320px); color: var(--zinc-900); letter-spacing: -0.06em; line-height: 0.8; margin-bottom: -40px;"
+      :style="{
+        fontSize: 'clamp(80px, 22vw, 320px)',
+        color: 'var(--zinc-900)',
+        letterSpacing: '-0.06em',
+        lineHeight: 0.8,
+        marginBottom: '-40px',
+        transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+        willChange: 'transform',
+      }"
     >
       MAKERS
     </div>

@@ -25,23 +25,25 @@ const PARTNERS = [
   <section class="bg-zinc-950 text-white py-20">
     <div class="container-m">
       <div class="flex items-center gap-8 flex-wrap partners-wrap">
-        <div class="flex-none max-w-full">
+        <Reveal as="div" class="flex-none max-w-full">
           <div class="mono mb-2" style="color: var(--orange);">PARTNERS</div>
           <div class="text-[26px] font-bold max-w-[18ch] leading-tight">
             Trusted and funded by global organizations.
           </div>
-        </div>
+        </Reveal>
         <div class="flex-1 flex flex-wrap border-l border-zinc-800 partners-grid">
-          <div
+          <Reveal
             v-for="(p, i) in PARTNERS"
             :key="p.name"
+            as="div"
+            :delay="80 + i * 30"
             class="px-[30px] py-5 flex-1"
             :class="i < PARTNERS.length - 1 ? 'border-r border-zinc-800' : ''"
             style="flex-basis: 200px;"
           >
             <div class="text-[30px] font-bold">{{ p.name }}</div>
             <div class="caption text-zinc-400 mt-1.5">{{ p.desc }}</div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </div>

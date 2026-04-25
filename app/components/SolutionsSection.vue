@@ -16,19 +16,21 @@ const current = computed(() => SOLUTIONS[active.value])
   <section id="solutions" class="bg-zinc-50 py-[140px]">
     <div class="container-m">
       <div class="flex justify-between items-end mb-[60px] flex-wrap gap-6">
-        <div>
+        <Reveal>
           <div class="eyebrow">The Makers Suite</div>
           <h2 class="h-section">Tools we built,<br />shipped, and stand behind.</h2>
-        </div>
-        <p class="body-lg text-zinc-600 max-w-[42ch]">
-          Every tool in the Makers Suite solves a real problem we ran into ourselves.
-          If you need a custom one — we build those too.
-        </p>
+        </Reveal>
+        <Reveal :delay="120">
+          <p class="body-lg text-zinc-600 max-w-[42ch]">
+            Every tool in the Makers Suite solves a real problem we ran into ourselves.
+            If you need a custom one — we build those too.
+          </p>
+        </Reveal>
       </div>
 
       <div class="grid gap-10 items-start" style="grid-template-columns: 1fr 1.4fr;">
         <!-- Index -->
-        <div class="border-t border-zinc-200">
+        <Reveal as="div" class="border-t border-zinc-200" :delay="80">
           <button
             v-for="(sol, i) in SOLUTIONS"
             :key="sol.id"
@@ -55,10 +57,12 @@ const current = computed(() => SOLUTIONS[active.value])
               </svg>
             </div>
           </button>
-        </div>
+        </Reveal>
 
         <!-- Detail pane -->
-        <div
+        <Reveal
+          as="div"
+          :delay="200"
           class="bg-white rounded-3xl p-8 sticky"
           style="top: 140px; box-shadow: 0 4px 0 rgba(0,0,0,0.06), 0 12px 30px rgba(0,0,0,0.05);"
         >
@@ -86,7 +90,7 @@ const current = computed(() => SOLUTIONS[active.value])
             <a href="#" class="px-[18px] py-2.5 bg-zinc-900 text-white rounded-full text-[15px] font-bold">View case study</a>
             <a href="#contact" class="px-[18px] py-2.5 border border-zinc-300 rounded-full text-[15px] font-bold text-zinc-700">Request similar</a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   </section>

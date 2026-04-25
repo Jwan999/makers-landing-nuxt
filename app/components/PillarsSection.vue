@@ -17,66 +17,143 @@ const PILLARS = [
   },
 ]
 
-const R = 220
-const Y_LIFT = 60 // shift all boxes up into the empty ring space
-const hover = ref<number | null>(null)
+const STEP_PX = 420
 
-// Fixed angles (in degrees) — top + upper-right + upper-left, wide enough that cards don't collide
-const ANGLES_DEG = [-90, -25, -155]
+const sectionEl = ref<HTMLElement | null>(null)
+const orbitEl = ref<HTMLElement | null>(null)
+const orbitSize = ref(460)
+const activeIndex = ref(0)
+
+const ANGLES_DEG = [-90, -15, -165]
+const R = computed(() => orbitSize.value * 0.36)
 
 const positions = computed(() =>
   PILLARS.map((_, i) => {
-    const a = (ANGLES_DEG[i] * Math.PI) / 180
+    const a = ((ANGLES_DEG[i] ?? 0) * Math.PI) / 180
     return {
-      x: Math.cos(a) * R,
-      y: Math.sin(a) * R - Y_LIFT,
+      x: Math.cos(a) * R.value,
+      y: Math.sin(a) * R.value,
     }
   })
 )
+
+let rafPending = false
+let rafId = 0
+let resizeObs: ResizeObserver | null = null
+
+function scheduleUpdate() {
+  if (rafPending) return
+  rafPending = true
+  rafId = requestAnimationFrame(() => {
+    rafPending = false
+    update()
+  })
+}
+
+function update() {
+  const el = sectionEl.value
+  if (!el) return
+  const rect = el.getBoundingClientRect()
+  const vh = window.innerHeight || 800
+  const totalPinned = rect.height - vh
+  const scrolled = Math.max(0, -rect.top)
+  const p = totalPinned > 0 ? Math.min(1, scrolled / totalPinned) : 0
+  activeIndex.value = Math.min(PILLARS.length - 1, Math.floor(p * PILLARS.length))
+}
+
+onMounted(() => {
+  const el = orbitEl.value
+  if (el) {
+    orbitSize.value = el.clientWidth
+    resizeObs = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        orbitSize.value = entry.contentRect.width
+      }
+    })
+    resizeObs.observe(el)
+  }
+  update()
+  window.addEventListener('scroll', scheduleUpdate, { passive: true })
+  window.addEventListener('resize', scheduleUpdate)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', scheduleUpdate)
+  window.removeEventListener('resize', scheduleUpdate)
+  if (rafId) cancelAnimationFrame(rafId)
+  resizeObs?.disconnect()
+})
 </script>
 
 <template>
-  <section id="pillars" class="bg-zinc-950 text-white py-[140px] relative overflow-hidden">
-    <div class="container-m">
-      <div class="text-center mb-10">
-        <div class="eyebrow centered">What We Do</div>
-        <h2 class="h-section text-white">Three pillars.<br />One foundation.</h2>
-      </div>
-
-      <div
-        class="relative mx-auto mt-[120px]"
-        :style="{ width: R * 2 + 180 + 'px', height: R * 2 + 180 + 'px', maxWidth: '100%' }"
-      >
-        <div class="absolute inset-0 rounded-full border border-dashed border-zinc-800" />
-
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <MakersMark :size="90" color="#ffffff" class="mx-auto" />
-          <div class="mono text-zinc-500 mt-[10px]">MAKERS</div>
+  <section
+    id="pillars"
+    ref="sectionEl"
+    class="bg-zinc-950 text-white relative"
+    :style="{ height: `calc(100vh + ${PILLARS.length * STEP_PX}px)` }"
+  >
+    <div class="sticky top-0 h-screen overflow-hidden flex items-center">
+      <div class="container-m w-full">
+        <div class="text-center mb-6">
+          <div class="eyebrow centered">What We Do</div>
+          <h2 class="h-section text-white">Three pillars.<br />One foundation.</h2>
         </div>
 
         <div
-          v-for="(p, i) in PILLARS"
-          :key="p.id"
-          class="absolute top-1/2 left-1/2 w-[180px] p-4 rounded-2xl border text-center cursor-pointer"
-          :class="hover === i ? 'bg-[var(--orange)] border-[var(--orange)] text-white' : 'bg-zinc-900 border-zinc-800 text-zinc-100'"
-          :style="{
-            transform: `translate(calc(-50% + ${positions[i].x}px), calc(-50% + ${positions[i].y}px))`,
-            transition: 'all 0.25s var(--ease-out)',
-          }"
-          @mouseenter="hover = i"
-          @mouseleave="hover = null"
+          ref="orbitEl"
+          class="relative mx-auto"
+          style="width: min(460px, 54vh, 88vw); aspect-ratio: 1;"
         >
-          <div class="mono mb-2" :class="hover === i ? 'text-white/70' : 'text-zinc-500'">
-            0{{ i + 1 }}
-          </div>
-          <div class="text-[19px] font-bold">{{ p.title }}</div>
-        </div>
-      </div>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-zinc-800"
+            :style="{
+              width: (R * 2) + 'px',
+              height: (R * 2) + 'px',
+              clipPath: 'inset(0 0 50% 0)',
+            }"
+          />
 
-      <div class="max-w-[560px] mx-auto mt-[-220px] relative z-10 min-h-[60px] text-center">
-        <p class="body-lg text-zinc-400">
-          {{ hover !== null ? PILLARS[hover].desc : 'Hover a pillar to learn more.' }}
-        </p>
+          <!-- Center logo + mark -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+            <MakersMark :size="Math.round(orbitSize * 0.14)" color="#ffffff" class="mx-auto" />
+            <div class="mono text-zinc-500 mt-[10px]">MAKERS</div>
+          </div>
+
+          <!-- Pillar cards -->
+          <div
+            v-for="(p, i) in PILLARS"
+            :key="p.id"
+            class="absolute top-1/2 left-1/2 p-3 rounded-2xl border text-center"
+            :class="activeIndex === i ? 'bg-[var(--orange)] border-[var(--orange)] text-white' : 'bg-zinc-900 border-zinc-800 text-zinc-100'"
+            :style="{
+              width: Math.round(orbitSize * 0.38) + 'px',
+              transform: `translate(calc(-50% + ${positions[i].x}px), calc(-50% + ${positions[i].y}px))`,
+              transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+            }"
+          >
+            <div class="mono mb-1" :class="activeIndex === i ? 'text-white/70' : 'text-zinc-500'">
+              0{{ i + 1 }}
+            </div>
+            <div class="text-[17px] font-bold whitespace-nowrap">{{ p.title }}</div>
+          </div>
+
+          <!-- Description (crossfading stack at the bottom of the orbit) -->
+          <div
+            class="absolute left-1/2 -translate-x-1/2 px-4"
+            style="bottom: 10%; width: min(640px, 92vw);"
+          >
+            <div class="grid grid-cols-1">
+              <p
+                v-for="(p, i) in PILLARS"
+                :key="p.id"
+                class="col-start-1 row-start-1 body-r text-zinc-400 text-justify transition-opacity duration-300"
+                :style="{ opacity: activeIndex === i ? 1 : 0 }"
+              >
+                {{ p.desc }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -32,21 +32,25 @@ const SERVICES = [
   <section id="services" class="bg-zinc-950 text-white py-[120px]">
     <div class="container-m">
       <div class="grid gap-20 mb-10 items-end services-header" style="grid-template-columns: 1fr 2fr;">
-        <div>
+        <Reveal>
           <div class="eyebrow" style="color: var(--orange);">Our Services</div>
           <h2 class="h-section text-white">
             Five ways<br />to work with<br /><span class="text-[var(--orange)]">Makers.</span>
           </h2>
-        </div>
-        <p class="body-lg text-zinc-400 self-end">
-          Services offered at the space, grounded in our facilities, curriculum expertise, and years of cross-sector partnerships.
-        </p>
+        </Reveal>
+        <Reveal :delay="120">
+          <p class="body-lg text-zinc-400 self-end">
+            Services offered at the space, grounded in our facilities, curriculum expertise, and years of cross-sector partnerships.
+          </p>
+        </Reveal>
       </div>
 
       <div>
-        <div
+        <Reveal
           v-for="(s, i) in SERVICES"
           :key="s.id"
+          as="div"
+          :delay="80 + i * 60"
           class="grid gap-8 py-7 border-t border-zinc-800 items-start services-row"
           style="grid-template-columns: 80px 1.4fr 2fr;"
         >
@@ -58,7 +62,7 @@ const SERVICES = [
           </div>
           <h3 class="text-[26px] font-bold" style="letter-spacing: -0.01em;">{{ s.title }}</h3>
           <p class="body-r text-zinc-400">{{ s.desc }}</p>
-        </div>
+        </Reveal>
       </div>
     </div>
   </section>

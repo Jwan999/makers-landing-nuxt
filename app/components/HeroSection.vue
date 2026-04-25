@@ -13,9 +13,9 @@ const chipClass = (size: string) =>
 </script>
 
 <template>
-  <section class="relative min-h-screen bg-zinc-50 text-zinc-950 flex items-center overflow-x-clip py-[120px]">
+  <section class="relative z-10 min-h-screen bg-zinc-50 text-zinc-950 flex items-center overflow-x-clip py-[120px]">
     <!-- Concentric orbit rings (decorative) -->
-    <div aria-hidden class="pointer-events-none absolute inset-0">
+    <div aria-hidden class="pointer-events-none absolute inset-0 z-[1]">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-zinc-200" style="width: min(86vw, 1080px);" />
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-dashed border-zinc-300" style="width: min(58vw, 740px);" />
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square rounded-full border border-zinc-200" style="width: min(34vw, 440px);" />
@@ -26,12 +26,13 @@ const chipClass = (size: string) =>
       <div
         v-for="(s, i) in stats"
         :key="i"
-        :class="['absolute bg-zinc-950 text-white rounded-[18px] flex flex-col gap-1 min-w-max', chipClass(s.size)]"
+        :class="['stat-chip absolute bg-zinc-950 text-white rounded-[18px] flex flex-col gap-1 min-w-max', chipClass(s.size)]"
         :style="{
           top: s.pos.top,
           left: s.pos.left,
           right: s.pos.right,
           boxShadow: '0 6px 0 rgba(0,0,0,0.2), 0 18px 40px rgba(0,0,0,0.25)',
+          animationDelay: `${500 + i * 380}ms`,
         }"
       >
         <div
@@ -75,7 +76,12 @@ const chipClass = (size: string) =>
 
         <!-- Mobile fallback: horizontal stat row below CTAs -->
         <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 lg:hidden">
-          <div v-for="(s, i) in stats" :key="i" class="bg-zinc-950 text-white rounded-xl p-3 text-left">
+          <div
+            v-for="(s, i) in stats"
+            :key="i"
+            class="stat-chip bg-zinc-950 text-white rounded-xl p-3 text-left"
+            :style="{ animationDelay: `${500 + i * 320}ms` }"
+          >
             <div class="font-bold text-[var(--orange)] text-[30px] leading-none">{{ s.n }}</div>
             <div class="mono text-zinc-400 mt-1">{{ s.l }}</div>
           </div>
@@ -84,3 +90,24 @@ const chipClass = (size: string) =>
     </div>
   </section>
 </template>
+
+<style scoped>
+.stat-chip {
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+  animation: chip-in 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes chip-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-chip {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+</style>

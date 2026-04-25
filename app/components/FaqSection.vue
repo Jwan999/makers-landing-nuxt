@@ -36,15 +36,17 @@ function toggle(i: number) {
 <template>
   <section class="bg-zinc-50 text-zinc-950 py-[120px]">
     <div class="container-m">
-      <div class="text-center mb-[60px]">
+      <Reveal as="div" class="text-center mb-[60px]">
         <div class="eyebrow centered">FAQ</div>
         <h2 class="h-section text-zinc-950">Common questions.</h2>
-      </div>
+      </Reveal>
 
       <div class="max-w-[720px] mx-auto">
-        <div
+        <Reveal
           v-for="(f, i) in FAQS"
           :key="i"
+          as="div"
+          :delay="80 + i * 50"
           class="border-b border-zinc-200 py-2"
         >
           <button
@@ -81,7 +83,7 @@ function toggle(i: number) {
           >
             {{ f.a }}
           </p>
-        </div>
+        </Reveal>
       </div>
     </div>
   </section>
