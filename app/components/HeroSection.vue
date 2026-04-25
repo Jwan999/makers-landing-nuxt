@@ -54,7 +54,10 @@ const chipClass = (size: string) =>
         <h1 class="font-bold text-zinc-950 leading-[1.05]" style="font-size: clamp(40px, 5.6vw, 76px); letter-spacing: -0.03em;">
           Empowering entrepreneurs and SME owners<br />
           across
-          <span class="bg-zinc-950 text-[var(--orange)] rounded-[10px] px-[14px] inline-block">Iraq.</span>
+          <span
+            class="bg-zinc-950 text-[var(--orange)] rounded-[18px] inline-block"
+            style="font-size: 1.12em; padding: 0.08em 0.32em; line-height: 1; vertical-align: -0.05em;"
+          >Iraq.</span>
         </h1>
         <div class="flex gap-3 justify-center mt-9 flex-wrap">
           <a

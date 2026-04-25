@@ -34,14 +34,14 @@ onBeforeUnmount(() => {
     style="background: var(--orange); min-height: 80vh;"
   >
     <div ref="parallaxEl" class="container-m text-center relative">
-      <Reveal as="div" class="mono mb-5">
+      <Reveal as="div" class="mono mb-14 lg:mb-5">
         BY THE NUMBERS — {{ String(idx + 1).padStart(2, '0') }}/{{ String(STATS.length).padStart(2, '0') }}
       </Reveal>
 
       <div
         class="text-white"
         :style="{
-          fontSize: 'clamp(96px, 22vw, 320px)',
+          fontSize: 'clamp(150px, 22vw, 320px)',
           lineHeight: 0.9,
           letterSpacing: '-0.04em',
           fontWeight: 500,
@@ -52,8 +52,8 @@ onBeforeUnmount(() => {
         {{ current.n }}
       </div>
       <div
-        class="font-bold mt-2.5"
-        style="font-size: clamp(22px, 2.4vw, 32px); color: rgba(255,255,255,0.9);"
+        class="font-bold mt-12 lg:mt-2.5"
+        style="font-size: clamp(24px, 2.4vw, 32px); color: rgba(255,255,255,0.9);"
       >
         {{ current.l }}
       </div>

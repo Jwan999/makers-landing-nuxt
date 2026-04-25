@@ -89,19 +89,20 @@ onBeforeUnmount(() => {
   <section
     id="pillars"
     ref="sectionEl"
-    class="bg-zinc-950 text-white relative"
-    :style="{ height: `calc(100vh + ${PILLARS.length * STEP_PX}px)` }"
+    class="pillars-section bg-zinc-950 text-white relative"
+    :style="{ '--pinned-height': `calc(100vh + ${PILLARS.length * STEP_PX}px)` }"
   >
-    <div class="sticky top-0 h-screen overflow-hidden flex items-center">
+    <div class="pillars-inner">
       <div class="container-m w-full">
-        <div class="text-center mb-6">
+        <div class="text-center mb-8 lg:mb-6">
           <div class="eyebrow centered">What We Do</div>
           <h2 class="h-section text-white">Three pillars.<br />One foundation.</h2>
         </div>
 
+        <!-- Desktop: orbit-based layout -->
         <div
           ref="orbitEl"
-          class="relative mx-auto"
+          class="relative mx-auto hidden lg:block"
           style="width: min(460px, 54vh, 88vw); aspect-ratio: 1;"
         >
           <div
@@ -154,7 +155,50 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </div>
+
+        <!-- Mobile: vertical stacked cards -->
+        <div class="grid gap-4 lg:hidden">
+          <Reveal
+            v-for="(p, i) in PILLARS"
+            :key="p.id"
+            as="div"
+            :delay="i * 100"
+            class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6"
+          >
+            <div class="flex items-center gap-3 mb-3">
+              <div class="mono text-[var(--orange)]">0{{ i + 1 }}</div>
+              <div class="h-px flex-1 bg-zinc-800" />
+            </div>
+            <h3 class="text-[22px] font-bold mb-3">{{ p.title }}</h3>
+            <p class="body-r text-zinc-400">{{ p.desc }}</p>
+          </Reveal>
+        </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Mobile: section flows naturally, no pinning */
+.pillars-section {
+  padding: 96px 0;
+}
+.pillars-inner {
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop: pinned scroll reveal of orbit pillars */
+@media (min-width: 1024px) {
+  .pillars-section {
+    height: var(--pinned-height);
+    padding: 0;
+  }
+  .pillars-inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+</style>
