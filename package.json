@@ -16,6 +16,6 @@
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "frontend-conqueror": "github:Jwan999/frontend-conqueror#v0.9.7"
+    "frontend-conqueror": "github:Jwan999/frontend-conqueror#v0.9.8"
   }
 }
