@@ -4,7 +4,7 @@
     <HeroSection />
     <AboutTeaser />
     <PillarsSection />
-    <SolutionsSection />
+    <!-- <SolutionsSection /> -->
     <ServicesSection />
     <ImpactSection />
     <PartnersSection />

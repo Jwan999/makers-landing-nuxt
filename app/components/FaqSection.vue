@@ -34,7 +34,7 @@ function toggle(i: number) {
 </script>
 
 <template>
-  <section class="bg-zinc-50 text-zinc-950 py-[120px]">
+  <section class="bg-zinc-50 text-zinc-950 py-20 lg:py-[120px]">
     <div class="container-m">
       <Reveal as="div" class="text-center mb-[60px]">
         <div class="eyebrow centered">FAQ</div>
@@ -51,7 +51,7 @@ function toggle(i: number) {
         >
           <button
             type="button"
-            class="w-full flex items-center justify-between py-[18px] text-left"
+            class="w-full flex items-center justify-between gap-4 py-[18px] text-left"
             @click="toggle(i)"
           >
             <span class="text-[20px] font-bold text-zinc-950">{{ f.q }}</span>

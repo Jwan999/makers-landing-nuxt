@@ -17,29 +17,20 @@ const PILLARS = [
   },
 ]
 
-const STEP_PX = 420
-
 const sectionEl = ref<HTMLElement | null>(null)
-const orbitEl = ref<HTMLElement | null>(null)
-const orbitSize = ref(460)
-const activeIndex = ref(0)
-
-const ANGLES_DEG = [-90, -15, -165]
-const R = computed(() => orbitSize.value * 0.36)
-
-const positions = computed(() =>
-  PILLARS.map((_, i) => {
-    const a = ((ANGLES_DEG[i] ?? 0) * Math.PI) / 180
-    return {
-      x: Math.cos(a) * R.value,
-      y: Math.sin(a) * R.value,
-    }
-  })
-)
+const progress = ref(0) // 0..1 through the pinned scroll
+const viewportW = ref(1280)
 
 let rafPending = false
 let rafId = 0
-let resizeObs: ResizeObserver | null = null
+
+// How far the horizontal track has panned, in px.
+const trackX = computed(() => -(progress.value * (PILLARS.length - 1) * viewportW.value))
+
+// Which pillar is currently front-and-center (for the numbering / dots).
+const activeIndex = computed(() =>
+  Math.min(PILLARS.length - 1, Math.round(progress.value * (PILLARS.length - 1)))
+)
 
 function scheduleUpdate() {
   if (rafPending) return
@@ -57,31 +48,25 @@ function update() {
   const vh = window.innerHeight || 800
   const totalPinned = rect.height - vh
   const scrolled = Math.max(0, -rect.top)
-  const p = totalPinned > 0 ? Math.min(1, scrolled / totalPinned) : 0
-  activeIndex.value = Math.min(PILLARS.length - 1, Math.floor(p * PILLARS.length))
+  progress.value = totalPinned > 0 ? Math.min(1, Math.max(0, scrolled / totalPinned)) : 0
+}
+
+function onResize() {
+  viewportW.value = window.innerWidth || 1280
+  scheduleUpdate()
 }
 
 onMounted(() => {
-  const el = orbitEl.value
-  if (el) {
-    orbitSize.value = el.clientWidth
-    resizeObs = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        orbitSize.value = entry.contentRect.width
-      }
-    })
-    resizeObs.observe(el)
-  }
+  viewportW.value = window.innerWidth || 1280
   update()
   window.addEventListener('scroll', scheduleUpdate, { passive: true })
-  window.addEventListener('resize', scheduleUpdate)
+  window.addEventListener('resize', onResize)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', scheduleUpdate)
-  window.removeEventListener('resize', scheduleUpdate)
+  window.removeEventListener('resize', onResize)
   if (rafId) cancelAnimationFrame(rafId)
-  resizeObs?.disconnect()
 })
 </script>
 
@@ -90,115 +75,135 @@ onBeforeUnmount(() => {
     id="pillars"
     ref="sectionEl"
     class="pillars-section bg-zinc-950 text-white relative"
-    :style="{ '--pinned-height': `calc(100vh + ${PILLARS.length * STEP_PX}px)` }"
+    :style="{ '--pinned-height': `calc(100vh + ${(PILLARS.length - 1) * 120}vw)` }"
   >
+    <!-- Pinned horizontal pan through the pillars (all breakpoints) -->
     <div class="pillars-inner">
-      <div class="container-m w-full">
-        <div class="text-center mb-8 lg:mb-6">
-          <div class="eyebrow centered">What We Do</div>
-          <h2 class="h-section text-white">Three pillars.<br />One foundation.</h2>
-        </div>
-
-        <!-- Desktop: orbit-based layout -->
-        <div
-          ref="orbitEl"
-          class="relative mx-auto hidden lg:block"
-          style="width: min(460px, 54vh, 88vw); aspect-ratio: 1;"
-        >
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-zinc-800"
-            :style="{
-              width: (R * 2) + 'px',
-              height: (R * 2) + 'px',
-              clipPath: 'inset(0 0 50% 0)',
-            }"
-          />
-
-          <!-- Center logo + mark -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-            <MakersMark :size="Math.round(orbitSize * 0.14)" color="#ffffff" class="mx-auto" />
-            <div class="mono text-zinc-500 mt-[10px]">MAKERS</div>
-          </div>
-
-          <!-- Pillar cards -->
-          <div
-            v-for="(p, i) in PILLARS"
-            :key="p.id"
-            class="absolute top-1/2 left-1/2 p-3 rounded-2xl border text-center"
-            :class="activeIndex === i ? 'bg-[var(--orange)] border-[var(--orange)] text-white' : 'bg-zinc-900 border-zinc-800 text-zinc-100'"
-            :style="{
-              width: Math.round(orbitSize * 0.38) + 'px',
-              transform: `translate(calc(-50% + ${positions[i].x}px), calc(-50% + ${positions[i].y}px))`,
-              transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-            }"
-          >
-            <div class="mono mb-1" :class="activeIndex === i ? 'text-white/70' : 'text-zinc-500'">
-              0{{ i + 1 }}
+      <div
+        class="pillars-track"
+        :style="{ transform: `translate3d(${trackX}px, 0, 0)` }"
+      >
+        <article v-for="(p, i) in PILLARS" :key="p.id" class="pillars-panel">
+          <div class="pillars-panel-content">
+            <div class="mono text-[var(--orange)] mb-6 lg:mb-8">
+              0{{ i + 1 }} <span class="text-zinc-600">/ 0{{ PILLARS.length }}</span>
             </div>
-            <div class="text-[17px] font-bold whitespace-nowrap">{{ p.title }}</div>
+            <h2 class="pillar-title">{{ p.title }}</h2>
+            <p class="pillar-desc body-r text-zinc-400">{{ p.desc }}</p>
           </div>
+        </article>
+      </div>
 
-          <!-- Description (crossfading stack at the bottom of the orbit) -->
-          <div
-            class="absolute left-1/2 -translate-x-1/2 px-4"
-            style="bottom: 10%; width: min(640px, 92vw);"
-          >
-            <div class="grid grid-cols-1">
-              <p
-                v-for="(p, i) in PILLARS"
-                :key="p.id"
-                class="col-start-1 row-start-1 body-r text-zinc-400 text-justify transition-opacity duration-300"
-                :style="{ opacity: activeIndex === i ? 1 : 0 }"
-              >
-                {{ p.desc }}
-              </p>
-            </div>
-          </div>
-        </div>
+      <!-- Progress dots -->
+      <div class="pillars-dots">
+        <span
+          v-for="(p, i) in PILLARS"
+          :key="p.id"
+          class="pillars-dot"
+          :class="i === activeIndex ? 'is-active' : ''"
+        />
+      </div>
 
-        <!-- Mobile: vertical stacked cards -->
-        <div class="grid gap-4 lg:hidden">
-          <Reveal
-            v-for="(p, i) in PILLARS"
-            :key="p.id"
-            as="div"
-            :delay="i * 100"
-            class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <div class="mono text-[var(--orange)]">0{{ i + 1 }}</div>
-              <div class="h-px flex-1 bg-zinc-800" />
-            </div>
-            <h3 class="text-[22px] font-bold mb-3">{{ p.title }}</h3>
-            <p class="body-r text-zinc-400">{{ p.desc }}</p>
-          </Reveal>
-        </div>
+      <!-- Section title, pinned to the bottom-right -->
+      <div class="pillars-title-corner">
+        <span class="mono pillars-corner-kicker">What We Do</span>
+        <h2 class="pillars-corner-title">The Pillars of Makers</h2>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Mobile: section flows naturally, no pinning */
+/* Pinned horizontal pan — applies at every breakpoint so the scroll effect
+   is kept on mobile too. */
 .pillars-section {
-  padding: 96px 0;
+  padding: 0;
+  height: var(--pinned-height);
 }
 .pillars-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.pillars-track {
   display: flex;
-  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+.pillars-panel {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.pillars-panel-content {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(88px, 15vh, 190px) var(--gutter) 0;
 }
 
-/* Desktop: pinned scroll reveal of orbit pillars */
+.pillar-title {
+  font-family: inherit;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+  font-size: clamp(40px, 11vw, 168px);
+  color: #fff;
+}
+.pillar-desc {
+  margin-top: clamp(16px, 3vh, 40px);
+  max-width: 52ch;
+}
+
+/* Progress dots — bottom-left so they never collide with the bottom-right title */
+.pillars-dots {
+  position: absolute;
+  left: var(--gutter);
+  bottom: clamp(24px, 6vh, 64px);
+  display: flex;
+  gap: 10px;
+}
+.pillars-dot {
+  width: 22px;
+  height: 4px;
+  border-radius: 999px;
+  background: #3f3f46; /* zinc-700 */
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+.pillars-dot.is-active {
+  background: var(--orange);
+  width: 38px;
+}
+
+/* Section title, pinned bottom-right */
+.pillars-title-corner {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(24px, 6vh, 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+  pointer-events: none;
+}
+.pillars-corner-kicker {
+  color: var(--orange);
+}
+.pillars-corner-title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-size: clamp(18px, 5vw, 40px);
+  color: #fff;
+  max-width: 12ch;
+}
+
 @media (min-width: 1024px) {
-  .pillars-section {
-    height: var(--pinned-height);
-    padding: 0;
-  }
-  .pillars-inner {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
+  .pillars-dots { gap: 10px; }
+  .pillars-corner-title { font-size: clamp(22px, 2.4vw, 40px); max-width: 14ch; }
 }
 </style>

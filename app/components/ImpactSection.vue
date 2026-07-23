@@ -30,49 +30,53 @@ onBeforeUnmount(() => {
 <template>
   <section
     id="impact"
-    class="relative overflow-hidden flex items-center py-[120px] text-white"
+    class="relative overflow-hidden flex items-center py-20 lg:py-[120px] text-white"
     style="background: var(--orange); min-height: 80vh;"
   >
-    <div ref="parallaxEl" class="container-m text-center relative">
-      <Reveal as="div" class="mono mb-14 lg:mb-5">
-        BY THE NUMBERS — {{ String(idx + 1).padStart(2, '0') }}/{{ String(STATS.length).padStart(2, '0') }}
-      </Reveal>
-
-      <div
-        class="text-white"
-        :style="{
-          fontSize: 'clamp(150px, 22vw, 320px)',
-          lineHeight: 0.9,
-          letterSpacing: '-0.04em',
-          fontWeight: 500,
-          transform: `translate3d(0, ${parallaxOffset}px, 0)`,
-          willChange: 'transform',
-        }"
-      >
-        {{ current.n }}
-      </div>
-      <div
-        class="font-bold mt-12 lg:mt-2.5"
-        style="font-size: clamp(24px, 2.4vw, 32px); color: rgba(255,255,255,0.9);"
-      >
-        {{ current.l }}
-      </div>
-
-      <div class="flex gap-2 justify-center mt-12">
-        <button
-          v-for="(_, i) in STATS"
-          :key="i"
-          type="button"
-          class="rounded transition-all"
+    <div ref="parallaxEl" class="container-m relative w-full">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16">
+        <!-- Number (left) -->
+        <div
+          class="text-white whitespace-nowrap shrink-0"
           :style="{
-            width: i === idx ? '32px' : '8px',
-            height: '8px',
-            borderRadius: '4px',
-            background: i === idx ? '#fff' : 'rgba(255,255,255,0.4)',
-            transitionDuration: '0.25s',
+            fontSize: 'clamp(60px, 15vw, 240px)',
+            lineHeight: 0.9,
+            letterSpacing: '-0.04em',
+            fontWeight: 500,
+            transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+            willChange: 'transform',
           }"
-          @click="idx = i"
-        />
+        >
+          {{ current.n }}
+        </div>
+
+        <!-- Info + progress (right) -->
+        <div class="flex items-start gap-8 md:gap-12 shrink-0">
+          <div class="flex flex-col gap-4">
+            <div class="mono text-white/70">
+              BY THE NUMBERS {{ String(idx + 1).padStart(2, '0') }}/{{ String(STATS.length).padStart(2, '0') }}
+            </div>
+            <div
+              class="font-bold"
+              style="font-size: clamp(26px, 2.6vw, 38px); color: rgba(255,255,255,0.95);"
+            >
+              {{ current.l }}
+            </div>
+          </div>
+
+          <!-- Progress dots — horizontal on mobile, vertical on desktop -->
+          <div class="flex flex-row lg:flex-col gap-2.5 pt-2 lg:pt-1.5 shrink-0">
+            <button
+              v-for="(_, i) in STATS"
+              :key="i"
+              type="button"
+              class="rounded-full transition-all duration-200"
+              :class="i === idx ? 'w-8 h-2 lg:w-2 lg:h-8 bg-white' : 'w-2 h-2 bg-white/40'"
+              :aria-label="`Show stat ${i + 1}`"
+              @click="idx = i"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>

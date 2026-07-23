@@ -1,16 +1,11 @@
 <script setup lang="ts">
-const details = [
-  { label: 'EMAIL',  value: 'hello@makersiq.org' },
-  { label: 'PHONE',  value: '+964 783 491 5325' },
-  { label: 'STUDIO', value: "Al Sina'a Street · Al Rusafa, Baghdad 10069" },
-  { label: 'HOURS',  value: 'Sun–Thu · 10am–7pm' },
-]
+const { open: openContactModal } = useContactModal()
 </script>
 
 <template>
   <section
     id="contact"
-    class="relative overflow-hidden py-[100px] text-white"
+    class="relative overflow-hidden py-16 lg:py-[100px] text-white"
     style="background: var(--orange);"
   >
     <div
@@ -32,27 +27,17 @@ const details = [
             Whether you want to train, collaborate, build, or just visit — pick your lane and reach out.
           </p>
         </Reveal>
-        <Reveal as="div" :delay="140" class="flex gap-3 flex-wrap">
-          <a href="#" class="px-6 py-[14px] bg-zinc-950 text-white rounded-full font-bold inline-flex items-center gap-[10px]">
-            I want to train
-          </a>
-          <a href="#" class="px-6 py-[14px] bg-zinc-950 text-white rounded-full font-bold">I'm a startup</a>
-          <a href="#" class="px-6 py-[14px] bg-zinc-950 text-white rounded-full font-bold">I'm a partner</a>
-        </Reveal>
-      </div>
-
-      <div
-        class="grid gap-6 mt-20 pt-10"
-        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid rgba(255,255,255,0.25);"
-      >
-        <Reveal
-          v-for="(d, i) in details"
-          :key="d.label"
-          as="div"
-          :delay="80 + i * 70"
-        >
-          <div class="mono" style="color: rgba(255,255,255,0.85);">{{ d.label }}</div>
-          <div class="font-bold mt-1.5 text-white" style="font-size: 22px;">{{ d.value }}</div>
+        <Reveal as="div" :delay="140" class="flex">
+          <button
+            type="button"
+            class="px-8 py-4 bg-zinc-950 text-white rounded-full font-bold inline-flex items-center gap-[10px] transition-transform active:scale-[0.99]"
+            @click="openContactModal()"
+          >
+            <span>Get in touch</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+              <path d="M5 12h14" /><path d="m13 6 6 6-6 6" />
+            </svg>
+          </button>
         </Reveal>
       </div>
     </div>

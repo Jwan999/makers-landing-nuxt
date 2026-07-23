@@ -19,19 +19,25 @@ const PARTNERS = [
   { name: 'World Learning',    desc: 'International NGO' },
   { name: 'FabLabs',           desc: 'Global FabLabs network' },
 ]
+
+// Two rows for the mobile marquee (opposite directions).
+const half = Math.ceil(PARTNERS.length / 2)
+const rowA = PARTNERS.slice(0, half)
+const rowB = PARTNERS.slice(half)
 </script>
 
 <template>
-  <section class="bg-zinc-950 text-white py-20">
-    <div class="container-m">
-      <div class="flex items-center gap-8 flex-wrap partners-wrap">
+  <section class="bg-zinc-950 text-white py-20 overflow-hidden">
+    <!-- Laptop: heading on the left + bordered partner cells, revealed on scroll -->
+    <div class="container-m hidden lg:block">
+      <div class="flex items-center gap-8 flex-wrap">
         <Reveal as="div" class="flex-none max-w-full">
           <div class="mono mb-2" style="color: var(--orange);">PARTNERS</div>
           <div class="text-[26px] font-bold max-w-[18ch] leading-tight">
             Trusted and funded by global organizations.
           </div>
         </Reveal>
-        <div class="flex-1 flex flex-wrap border-l border-zinc-800 partners-grid">
+        <div class="flex-1 flex flex-wrap border-l border-zinc-800">
           <Reveal
             v-for="(p, i) in PARTNERS"
             :key="p.name"
@@ -47,12 +53,84 @@ const PARTNERS = [
         </div>
       </div>
     </div>
+
+    <!-- Mobile / tablet: heading + two self-moving marquee rows -->
+    <div class="lg:hidden">
+      <div class="container-m mb-8">
+        <Reveal>
+          <div class="mono mb-2" style="color: var(--orange);">PARTNERS</div>
+          <div class="text-[26px] font-bold leading-tight">
+            Trusted and funded by global organizations.
+          </div>
+        </Reveal>
+      </div>
+      <div class="flex flex-col gap-3">
+      <div class="marquee">
+        <div class="marquee-track marquee-ltr">
+          <div
+            v-for="(p, i) in [...rowA, ...rowA]"
+            :key="'a' + i"
+            class="marquee-card"
+          >
+            <div class="text-[22px] font-bold leading-tight">{{ p.name }}</div>
+            <div class="caption text-zinc-400 mt-1.5">{{ p.desc }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track marquee-rtl">
+          <div
+            v-for="(p, i) in [...rowB, ...rowB]"
+            :key="'b' + i"
+            class="marquee-card"
+          >
+            <div class="text-[22px] font-bold leading-tight">{{ p.name }}</div>
+            <div class="caption text-zinc-400 mt-1.5">{{ p.desc }}</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
-@media (max-width: 768px) {
-  .partners-wrap { flex-direction: column; align-items: flex-start; }
-  .partners-grid { border-left: 0 !important; border-top: 1px solid var(--zinc-800); }
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+.marquee-card {
+  flex: none;
+  width: 210px;
+  border: 1px solid var(--zinc-800);
+  background: rgba(24, 24, 27, 0.6);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.marquee-ltr {
+  animation: marquee-ltr 34s linear infinite;
+}
+.marquee-rtl {
+  animation: marquee-rtl 34s linear infinite;
+}
+@keyframes marquee-ltr {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 6px)); }
+}
+@keyframes marquee-rtl {
+  from { transform: translateX(calc(-50% - 6px)); }
+  to { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-ltr,
+  .marquee-rtl {
+    animation: none;
+  }
 }
 </style>
