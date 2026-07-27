@@ -3,7 +3,7 @@ const PILLARS = [
   {
     id: 'employment',
     title: 'Employment',
-    desc: "Creating sustainable and inclusive job opportunities for youth, with a strong focus on skills development and the digital economy. We boost youth employability by connecting young talent with the private sector, government, and international partners.",
+    desc: "Creating sustainable and inclusive job opportunities for youth, with a strong focus on skills development and the digital economy. We boost youth employability by connecting young talent with the private sector and government.",
   },
   {
     id: 'sme',

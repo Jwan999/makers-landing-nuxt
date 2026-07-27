@@ -69,7 +69,7 @@
           </div>
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">Sub-copy</p>
-            <p class="text-gray-300">We boost youth employability and create job opportunities by connecting talent with the private sector, government, and international partners.</p>
+            <p class="text-gray-300">We boost youth employability and create job opportunities by connecting talent with the private sector and government.</p>
           </div>
           <div class="mb-4">
             <p class="text-sm text-gray-500 uppercase tracking-wide mb-1">CTA Buttons</p>
@@ -125,7 +125,7 @@
           <div class="space-y-4">
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">1. Employment</h3>
-              <p class="text-gray-400 text-sm">Creating sustainable and inclusive job opportunities for youth, with a strong focus on skills development and the digital economy. We boost youth employability by connecting young talent with the private sector, government, and international partners through targeted initiatives and national events.</p>
+              <p class="text-gray-400 text-sm">Creating sustainable and inclusive job opportunities for youth, with a strong focus on skills development and the digital economy. We boost youth employability by connecting young talent with the private sector and government through targeted initiatives and national events.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">2. Businesses & SMEs</h3>
@@ -195,7 +195,7 @@
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Curriculum Development</h3>
-              <p class="text-gray-400 text-sm">Custom curriculum design for IT, entrepreneurship, and digital skills training. Developed for organizations including WFP, US Embassy, and ministry-level clients.</p>
+              <p class="text-gray-400 text-sm">Custom curriculum design for IT, entrepreneurship, and digital skills training. Developed for institutional and ministry-level clients.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
               <h3 class="text-white font-semibold mb-1">Co-Working Spaces</h3>
@@ -286,10 +286,6 @@
               <p class="text-gray-500 text-xs mt-1">Training halls, curriculum development, co-working, financial understanding, investment readiness.</p>
             </div>
             <div class="bg-gray-800 rounded p-4">
-              <p class="text-white font-semibold text-sm">Who are Makers' partners?</p>
-              <p class="text-gray-500 text-xs mt-1">GIZ, USAID, ILO, IOM, and other international organizations.</p>
-            </div>
-            <div class="bg-gray-800 rounded p-4">
               <p class="text-white font-semibold text-sm">What kind of research does Makers conduct?</p>
               <p class="text-gray-500 text-xs mt-1">Sector analysis, skills mapping, fintech research, private sector mapping.</p>
             </div>
@@ -351,7 +347,6 @@
               <ul class="space-y-1 text-gray-400 text-sm">
                 <li>- Full origin story (founded 2017 as IoT Maker, rebranded to Makers of Baghdad)</li>
                 <li>- Mission: data-driven hub empowering entrepreneurs and SME owners across Iraq</li>
-                <li>- Backing: GIZ, USAID, ILO, IOM, and other partners</li>
                 <li>- Team photo and leadership</li>
               </ul>
             </div>

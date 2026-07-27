@@ -33,7 +33,7 @@ const events = [
   {
     y: '2025',
     theme: 'Working at national scale',
-    goal: 'Took our research, migration and employment programs country-wide with international partners — from skills mapping to national entrepreneurship weeks.',
+    goal: 'Took our research, migration and employment programs country-wide — from skills mapping to national entrepreneurship weeks.',
     programs: ['Tawtheef', 'GEW 2025', 'Skills Mapping', 'Tech Pathways MENA', "Ta'zeez"],
   },
   {

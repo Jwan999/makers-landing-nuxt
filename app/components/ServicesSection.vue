@@ -8,7 +8,7 @@ const SERVICES = [
   {
     id: 'curriculum',
     title: 'Curriculum Development',
-    desc: 'Custom curriculum design for IT, entrepreneurship, and digital skills — developed for international agencies, diplomatic missions, and ministry-level clients.',
+    desc: 'Custom curriculum design for IT, entrepreneurship, and digital skills — developed for institutional and ministry-level clients.',
   },
   {
     id: 'cowork',
@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
               Five ways<br />to work with<br /><span class="text-[var(--orange)]">Makers.</span>
             </h2>
             <p class="body-lg text-zinc-400 mt-6 max-w-[42ch] hidden lg:block">
-              Services offered at the space, grounded in our facilities, curriculum expertise, and years of cross-sector partnerships.
+              Services offered at the space, grounded in our facilities, curriculum expertise, and years of hands-on delivery.
             </p>
 
             <!-- Progress -->
