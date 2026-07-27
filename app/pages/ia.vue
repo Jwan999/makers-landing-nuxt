@@ -8,11 +8,10 @@
         <p class="text-sm text-gray-600 mt-2">This page is not linked anywhere on the site. It's a blueprint for what each section should contain.</p>
 
         <div class="mt-6 bg-gray-900 border border-gray-800 rounded-lg p-4">
-          <p class="text-sm text-amber-500 uppercase tracking-wide mb-2">Site Structure — 4 Pages</p>
+          <p class="text-sm text-amber-500 uppercase tracking-wide mb-2">Site Structure — 3 Pages</p>
           <ul class="space-y-1 text-gray-300 text-sm">
             <li><span class="text-white font-semibold">/ (Landing Page)</span> — Hero, about teaser, 3 pillars, Makers Suite, services, impact, partners, FAQs, contact form, footer</li>
             <li><span class="text-white font-semibold">/about</span> — Who We Are + The Space (co-work, training halls, open space) — <span class="text-amber-400">Coming Soon</span></li>
-            <li><span class="text-white font-semibold">/previous-work</span> — Portfolio of all previous projects, team, and Tawtheef platform</li>
             <li><span class="text-white font-semibold">/data-hub</span> — Data Hub — <span class="text-amber-400">Coming Soon</span></li>
           </ul>
         </div>
@@ -23,7 +22,7 @@
             <li>— NEVER use "startups" — always say <span class="text-white font-semibold">"Businesses and SMEs"</span></li>
             <li>— NEVER use "programs" — the programs page is removed</li>
             <li>— Technologies section is called <span class="text-white font-semibold">"Makers Suite"</span></li>
-            <li>— Navbar only has page links (Who We Are, Previous Work, Data Hub) — sections are NOT in navbar</li>
+            <li>— Navbar only has page links (Who We Are, Data Hub) — sections are NOT in navbar</li>
           </ul>
         </div>
       </header>
@@ -45,7 +44,7 @@
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <ul class="space-y-2 text-gray-300">
             <li><span class="text-amber-500">Logo:</span> Makers</li>
-            <li><span class="text-amber-500">Page Links:</span> Who We Are | Previous Work | Data Hub</li>
+            <li><span class="text-amber-500">Page Links:</span> Who We Are | Data Hub</li>
             <li><span class="text-amber-500">CTA Button:</span> "Get Involved"</li>
           </ul>
           <p class="text-sm text-gray-500 mt-4 italic">Sticky nav, minimal. Logo left, links center, CTA right. Sections (pillars, suite, impact, services, contact) are NOT in the navbar — they are scroll sections on the landing page only.</p>
@@ -341,7 +340,7 @@
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <ul class="space-y-2 text-gray-300">
             <li><span class="text-amber-500">Logo:</span> Makers logo</li>
-            <li><span class="text-amber-500">Quick Links:</span> Who We Are, Previous Work, Data Hub, Contact</li>
+            <li><span class="text-amber-500">Quick Links:</span> Who We Are, Data Hub, Contact</li>
             <li><span class="text-amber-500">Social Icons:</span> Facebook, Instagram, YouTube</li>
             <li><span class="text-amber-500">Copyright:</span> &copy; 2024 Makers of Baghdad. All rights reserved.</li>
           </ul>
@@ -379,42 +378,6 @@
                 <li>- Co-Working area, Training Halls, Open Space</li>
                 <li>- Location: Al Sina'a Street, Baghdad, Al Rusafa, 10069, Iraq</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════ -->
-      <!-- PREVIOUS WORK PAGE -->
-      <!-- ═══════════════════════════════════════ -->
-
-      <div class="mb-8 mt-16">
-        <h2 class="text-lg text-amber-500 uppercase tracking-widest border-b border-amber-500/30 pb-2">Previous Work Page ( /previous-work )</h2>
-      </div>
-
-      <section class="mb-10">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">New Page</span>
-          <h2 class="text-2xl font-bold text-white">Previous Work Portfolio</h2>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Complete portfolio of all Makers projects with project details, team members, and Tawtheef platform showcase.</p>
-          <div class="space-y-4">
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">Accomplishments Overview</h3>
-              <p class="text-gray-400 text-sm">15,000+ Beneficiaries, 200+ Training Sessions, 140+ Products, 200+ SMEs Supported, 2,000+ Jobs Created</p>
-            </div>
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">Projects Table</h3>
-              <p class="text-gray-400 text-sm">20+ projects with: Name, Description, Duration, Donor, Grant Size</p>
-            </div>
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">The Team</h3>
-              <p class="text-gray-400 text-sm">Ali Taher, Ahmed Dawood, Sara Luay, Mustafa Ramzi, Noor Saad, Mina Talib — with roles and experience</p>
-            </div>
-            <div class="border-l-2 border-amber-500/50 pl-4">
-              <h3 class="text-white font-semibold mb-2">Tawtheef Platform Showcase</h3>
-              <p class="text-gray-400 text-sm">Full feature overview, objectives, services, outreach strategy, sustainability plan</p>
             </div>
           </div>
         </div>

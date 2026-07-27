@@ -3,7 +3,6 @@ const { open: openContactModal } = useContactModal()
 
 const nav = [
   { label: 'Who We Are', href: '/about' },
-  { label: 'Previous Work', href: '/previous-work' },
   { label: 'Data Hub', href: '/data-hub' },
   { label: 'What We Do', href: '/#pillars' },
   { label: 'Impact', href: '/#impact' },

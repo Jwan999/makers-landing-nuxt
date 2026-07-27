@@ -6,7 +6,6 @@ const mobileOpen = ref(false)
 
 const links = [
   { label: 'Who We Are', href: '/about' },
-  { label: 'Previous Work', href: '/previous-work' },
   { label: 'Data Hub', href: '/data-hub' },
 ]
 
