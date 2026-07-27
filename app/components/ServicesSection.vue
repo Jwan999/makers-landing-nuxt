@@ -8,7 +8,7 @@ const SERVICES = [
   {
     id: 'curriculum',
     title: 'Curriculum Development',
-    desc: 'Custom curriculum design for IT, entrepreneurship, and digital skills — developed for WFP, US Embassy, and ministry-level clients.',
+    desc: 'Custom curriculum design for IT, entrepreneurship, and digital skills — developed for international agencies, diplomatic missions, and ministry-level clients.',
   },
   {
     id: 'cowork',

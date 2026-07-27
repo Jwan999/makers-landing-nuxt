@@ -22,25 +22,25 @@ const events = [
     y: '2023',
     theme: 'From skills to jobs',
     goal: 'Shifted from teaching skills to placing people — structured job-readiness tracks that ended with graduates meeting real employers at a job fair.',
-    programs: ['Masarat-1 · USAID', 'Climathon · GIZ'],
+    programs: ['Masarat-1', 'Climathon'],
   },
   {
     y: '2024',
     theme: 'Programs, research, and a home for founders',
     goal: 'Scaled into acceleration and applied research, and opened the American Space for Entrepreneurship & Innovation inside our walls.',
-    programs: ['American Space · US Embassy', 'Mahara · GIZ', 'Masarat 2 · USAID', 'AgriTech · EU', 'FinTech mapping · CBI'],
+    programs: ['American Space', 'Mahara', 'Masarat 2', 'AgriTech', 'FinTech mapping'],
   },
   {
     y: '2025',
     theme: 'Working at national scale',
     goal: 'Took our research, migration and employment programs country-wide with international partners — from skills mapping to national entrepreneurship weeks.',
-    programs: ['Tawtheef · WUSC', 'GEW 2025', 'Skills Mapping · IOM', 'Tech Pathways MENA', "Ta'zeez · ILO"],
+    programs: ['Tawtheef', 'GEW 2025', 'Skills Mapping', 'Tech Pathways MENA', "Ta'zeez"],
   },
   {
     y: 'Now',
     theme: "Iraq's data-driven hub",
     goal: 'Backing entrepreneurs and youth across Iraq with capacity building, applied research, and the data that helps shape policy and practice.',
-    programs: ['Mahara · GIZ ProDIGI', 'DAP · AUS Embassy', 'Green Tech · ILO', 'Social Protection · ILO'],
+    programs: ['Mahara', 'DAP', 'Green Tech', 'Social Protection'],
   },
 ]
 

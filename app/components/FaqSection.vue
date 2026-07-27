@@ -17,10 +17,6 @@ const FAQS = [
     a: 'Training halls, curriculum development, co-working spaces, financial understanding support, and investment readiness programming — built on six years of experience.',
   },
   {
-    q: "Who are Makers' partners?",
-    a: 'GIZ, USAID, ILO, IOM, WFP, GEN, UNICEF, UNFPA, the US and Australian Embassies, DRC, WUSC, European Union, Central Bank of Iraq, KfW, Zain, World Learning and the FabLabs Network.',
-  },
-  {
     q: 'What kind of research does Makers conduct?',
     a: 'Sector analysis, skills mapping, fintech research, and private-sector mapping — data-driven studies that inform policy and program design.',
   },
