@@ -145,8 +145,14 @@ const { el: parallaxEl, offset: parallaxOffset } = useParallax(0.12)
     <!-- Bottom bar -->
     <div class="py-6" style="background: #111113;">
       <div class="container-m flex flex-col sm:flex-row items-center justify-between gap-4 text-[14px] font-bold text-zinc-500">
-        <span>© {{ year }} Makers of Baghdad. All rights reserved.</span>
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center sm:items-start gap-1.5 text-center sm:text-left">
+          <span>© {{ year }} Makers of Baghdad. All rights reserved.</span>
+          <p class="text-[13px] font-medium text-zinc-600 max-w-[62ch] leading-relaxed">
+            Makers of Baghdad is registered as Al-Baha Organization for Information
+            Technology Development and Public Services.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
           <a
             v-for="s in socials"
             :key="s.label"
