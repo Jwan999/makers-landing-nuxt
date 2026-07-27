@@ -10,7 +10,7 @@
         <div class="mt-6 bg-gray-900 border border-gray-800 rounded-lg p-4">
           <p class="text-sm text-amber-500 uppercase tracking-wide mb-2">Site Structure — 3 Pages</p>
           <ul class="space-y-1 text-gray-300 text-sm">
-            <li><span class="text-white font-semibold">/ (Landing Page)</span> — Hero, about teaser, 3 pillars, Makers Suite, services, impact, partners, FAQs, contact form, footer</li>
+            <li><span class="text-white font-semibold">/ (Landing Page)</span> — Hero, about teaser, 3 pillars, Makers Suite, services, impact, FAQs, contact form, footer</li>
             <li><span class="text-white font-semibold">/about</span> — Who We Are + The Space (co-work, training halls, open space) — <span class="text-amber-400">Coming Soon</span></li>
             <li><span class="text-white font-semibold">/data-hub</span> — Data Hub — <span class="text-amber-400">Coming Soon</span></li>
           </ul>
@@ -260,27 +260,10 @@
         </div>
       </section>
 
-      <!-- Section 8: Partners & Supporters -->
+      <!-- Section 8: FAQs -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
           <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">08</span>
-          <h2 class="text-2xl font-bold text-white">Partners & Supporters</h2>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <p class="text-sm text-gray-500 mb-4">Logo row of all partners from previous projects.</p>
-          <div class="space-y-4">
-            <div class="bg-gray-800 rounded p-4">
-              <h3 class="text-white font-semibold mb-1">Major Partners</h3>
-              <p class="text-gray-400 text-sm">GIZ, USAID, ILO, IOM, WFP, GEN, UNICEF, UNFPA, US Embassy, Australian Embassy, DRC, WUSC, European Union, Central Bank of Iraq, KfW, Zain, World Learning, FabLabs Network</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 9: FAQs -->
-      <section class="mb-10">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">09</span>
           <h2 class="text-2xl font-bold text-white">FAQs</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
@@ -317,7 +300,7 @@
       <!-- Section 10: Contact Form -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">10</span>
+          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">09</span>
           <h2 class="text-2xl font-bold text-white">Contact Form</h2>
           <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Changed to Form</span>
         </div>
@@ -334,7 +317,7 @@
       <!-- Section 11: Footer -->
       <section class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">11</span>
+          <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">10</span>
           <h2 class="text-2xl font-bold text-white">Footer</h2>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">

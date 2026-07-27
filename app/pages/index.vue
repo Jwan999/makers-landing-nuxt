@@ -7,7 +7,6 @@
     <!-- <SolutionsSection /> -->
     <ServicesSection />
     <ImpactSection />
-    <PartnersSection />
     <FaqSection />
     <ContactSection />
     <FooterSection />
